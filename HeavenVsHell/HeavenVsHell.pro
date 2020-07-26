@@ -17,12 +17,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Listas_Cargadas.cpp \
+    ListaPersonasDobleEnlazada.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Data.h \
     Listas_Cargadas.h \
+    ListaPersonasDobleEnlazada.h \
+    Persona.h \
     mainwindow.h
 
 FORMS += \
