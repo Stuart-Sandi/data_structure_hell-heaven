@@ -2,13 +2,16 @@
 #define PERSONA_H
 
 #include <QString>
-#include <ListaPersonasDobleEnlazada.h>
+#include <QList>
 
 class Persona
 {
 public:
 
-    int id;
+    //ENTEROS
+    long int id;
+
+    //STRINGS
     QString nombre;
     QString apellido;
     QString pais;
@@ -16,17 +19,31 @@ public:
     QString profesion;
     QString correo;
     QString fechaHoraNacimiento;
+    QString continente;
+
+    //LISTAS
     int pecados[7] = {0,0,0,0,0,0,0};
     int buenasAcciones[7] = {0,0,0,0,0,0,0};
-    ListaPersonasDobleEnlazada * listaHijos;
-    Persona * padre;
+    QList <Persona> listaHijos;
+
+    //BOOLEANOS
     bool isPadre;
+    bool isHijo;
+
+    //PERSONA
+    Persona * padre;
+    Persona * next;
+    Persona * before;
 
     Persona();
 
-    Persona(int pId, QString pNombre, QString pApellido, QString pPais, QString pCreencia, QString pProfesion, QString pCorreo, QString pFechaNacimiento, Persona * pPadre){
+    Persona(int pId, QString pNombre, QString pApellido, QString pPais, QString pCreencia, QString pProfesion, QString pCorreo, QString pFechaNacimiento, QString pContinente){
 
+        //ENTEROS
         this->id = pId;
+        this->continente = pContinente;
+
+        //STRINGS
         this->nombre = pNombre;
         this->apellido = pApellido;
         this->pais = pPais;
@@ -34,9 +51,15 @@ public:
         this->profesion = pProfesion;
         this->correo = pCorreo;
         this->fechaHoraNacimiento = pFechaNacimiento;
-        this->listaHijos = new ListaPersonasDobleEnlazada();
-        this->padre = pPadre;
+
+        //BOOLEANOS
         this->isPadre = false;
+        this->isHijo = false;
+
+        //PERSONA
+        this->padre = NULL;
+        this->next = NULL;
+        this->before = NULL;
     }
 
 };

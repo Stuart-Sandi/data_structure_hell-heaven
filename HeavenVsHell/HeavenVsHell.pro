@@ -16,22 +16,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
-    ListaPersonasDobleEnlazada.cpp \
+    Ventana_Creacion.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Data.h \
+    ListaDoble_Personas.h \
     Listas_Cargadas.h \
-    ListaPersonasDobleEnlazada.h \
     Persona.h \
+    Ventana_Creacion.h \
     mainwindow.h
 
 FORMS += \
+    Ventana_Creacion.ui \
     mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Imagenes.qrc

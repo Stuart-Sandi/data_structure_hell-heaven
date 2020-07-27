@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Listas/Fondo_Principal.png</file>
+        <file>Listas/fondo_creacion.jpg</file>
+    </qresource>
+</RCC>

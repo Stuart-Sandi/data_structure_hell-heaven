@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <Ventana_Creacion.h>
 #include <Data.h>
 #include <QDebug>
 
@@ -15,8 +16,12 @@ class MainWindow : public QMainWindow
 
 public:
     Data * datos;
+    Ventana_Creacion * vCreacion;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

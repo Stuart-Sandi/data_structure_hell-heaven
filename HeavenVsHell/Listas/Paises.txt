@@ -1,100 +1,25 @@
-Afganistan
-Albania
-Alemania
-Arabia Saudita
-Argentina
-Australia
-Austria
-Azerbaiyan
-Bahamas
-Belgica
-Belice
-Birmania
-Bolivia
-Brasil
-Bulgaria
-Cabo Verde
-Camerun
-Canada
-Catar
-Chile
-China
-Colombia
-Corea del Norte
-Corea del Sur
-Costa de Marfil
 Costa Rica
-Croacia
-Cuba
-Dinamarca
-Dominica
-Ecuador
-Egipto
-El Salvador
-Emiratos Arabes Unidos
-Eslovaquia
-Espana
-Estados Unidos
-Etiopia
-Filipinas
-Francia
-Georgia
-Ghana
-Granada
-Grecia
-Guatemala
-Haiti
-Honduras
-Hungria
-India
-Indonesia
-Irak
-Iran
-Irlanda
-Islandia
-Israel
-Italia
-Jamaica
-Japon
-Kazajistan
-Kenia
-Kuwait
-Letonia
-Libano
-Liberia
-Luxemburgo
-Madagascar
-Mali
-Malta
-Marruecos
-Mexico
-Monaco
 Nicaragua
-Nigeria
-Noruega
-Nueva Zelanda
-Paises Bajos
-Pakistan
-Panama
-Paraguay
-Peru
-Polonia
-Portugal
-Reino Unido
-Ruanda
-Rumania
-Rusia
-Senegal
-Serbia
-Singapur
-Siria
-Suecia
-Suiza
-Tunez
-Turquia
-Ucrania
-Uganda
-Uruguay
-Uzbekistan
+Mexico
+Colombia
 Venezuela
-Vietnam
+España
+Francia
+Holanda
+Italia
+Suiza
+China
+Japon
+Camboya
+Azerbaiyan
+Kuwait
+Sudan
+Sudafrica
+Egipto
+Tunez
+Uganda
+Kiribati
+Australia
+Nueva Zelanda
+Palaos
+Nauru
