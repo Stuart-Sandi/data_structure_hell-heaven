@@ -27,6 +27,7 @@ public:
     void insertarAlInicio(Persona *);
     void insertarAlFinal(Persona *);
     void listaOrdenada();
+    void agregarFamilia();
     Persona * buscarPersona(int);
     QString obtenerFechaHoraActual();
     QString hallarContinente(int);

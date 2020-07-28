@@ -29,16 +29,20 @@ void Ventana_Creacion::on_pushButton_clicked()
         if (validar == 1 || x>=100){
             validar = 1;
             this->datos->lPersonas->generarMundo(x);
+            this->datos->lPersonas->agregarFamilia();
             QMessageBox msgBox;
             msgBox.setText(QString::number(x)+" humans generated");
             msgBox.setWindowTitle("Error");
             msgBox.exec();
 
-//            Persona * tmp = this->datos->lPersonas->primerNodo;
-//            while (tmp != NULL){
-//                qDebug()<<tmp->id;
-//                tmp = tmp->next;
-//            }
+            int cont = 0;
+            Persona * tmp = this->datos->lPersonas->primerNodo;
+            while (tmp != NULL){
+                cont++;
+                tmp = tmp->next;
+            }
+            qDebug()<<"Tamaño: "+QString::number(cont);
+
         }
         else{
             QMessageBox msgBox;

@@ -65,6 +65,9 @@ void ListaDoble_Personas::generarMundo(int cGenerar){
 }
 
 void ListaDoble_Personas::insertarAlInicio(Persona * pPersona){
+    /*
+     *
+     */
     if (primerNodo == NULL){
      primerNodo = ultimoNodo = pPersona;
 
@@ -79,7 +82,9 @@ void ListaDoble_Personas::insertarAlInicio(Persona * pPersona){
 }
 
 void ListaDoble_Personas::insertarAlFinal(Persona * pPersona){
-
+    /*
+     *
+     */
     if (primerNodo == NULL){
         primerNodo = ultimoNodo = pPersona;
 
@@ -95,19 +100,24 @@ void ListaDoble_Personas::insertarAlFinal(Persona * pPersona){
 }
 
 Persona * ListaDoble_Personas::buscarPersona(int pId){
-
-        Persona * tmp = this->primerNodo;
-        while (tmp != NULL) {
-            if (tmp->id == pId){
-                return tmp;
-            }
-            tmp = tmp->next;
+    /*
+     *
+     */
+    Persona * tmp = this->primerNodo;
+    while (tmp != NULL) {
+        if (tmp->id == pId){
+            return tmp;
         }
-        return NULL;
+        tmp = tmp->next;
+    }
+    return NULL;
 
 }
 
 void ListaDoble_Personas::listaOrdenada(){
+    /*
+     *
+     */
     int x = this->listaTMP.size();
     for (int i = 0; i<x; i++){
         int min = i;
@@ -120,20 +130,66 @@ void ListaDoble_Personas::listaOrdenada(){
     }
 }
 
+void ListaDoble_Personas::agregarFamilia(){
+    /*
+     *
+     */
+    for (int i = 0;i<this->listaTMP.size();i++) {
+
+        Persona * tmp = this->listaTMP[i];
+        int cantHijos = random(0,5);
+        QList <Persona*> tmpHijos = this->familias.take(tmp->apellido);
+
+        for (int w = 0;w< cantHijos;w++) {
+
+            for (int j=0;j<tmpHijos.size();j++) {
+
+                Persona * tmp2 = tmpHijos[j];
+                //PREGUNTA SI ES LA MISMA PERSONA A LA QUE SE LE VA A ASIGNAR HIJOS
+                if (tmp != tmp2){
+                    //PREGUNTA SI EL APELLIDO ES EL MISMO DE LA PERSONA QUE SE LE VA A AGREGAR HIJOS
+                    if(tmp2->apellido == tmp->apellido){
+                        //PREGUNTA SI EL PAIS ES EL MISMO DE LA PERSONA QUE SE LE VA A AGREGAR HIJOS
+                        if(tmp2->pais == tmp->pais){
+                            //PREGUNTA SI NO ES HIJO DE ALGUIEN
+                            if (!tmp2->isHijo){
+                                tmp->listaHijos.append(tmp2);
+                                tmp2->isHijo = true;
+                                tmp2->padre = tmp;
+                                tmp->isPadre = true;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
 int ListaDoble_Personas::random(int x, int y){
+    /*
+     *
+     */
     std::uniform_int_distribution<int>d4(x,y);
     int dato = d4(*QRandomGenerator::global());
     return dato;
 }
 
 QString ListaDoble_Personas::obtenerFechaHoraActual(){
-
+    /*
+     *
+     */
     QString fechaHoraExacta = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss ap");
     return fechaHoraExacta;
 
 }
 
 QString ListaDoble_Personas::hallarContinente(int x){
+    /*
+     *
+     */
     QString continente;
     if (x<10){
         continente = "America";

@@ -24,7 +24,7 @@ public:
     //LISTAS
     int pecados[7] = {0,0,0,0,0,0,0};
     int buenasAcciones[7] = {0,0,0,0,0,0,0};
-    QList <Persona> listaHijos;
+    QList <Persona*> listaHijos;
 
     //BOOLEANOS
     bool isPadre;
