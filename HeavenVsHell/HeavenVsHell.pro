@@ -19,6 +19,7 @@ SOURCES += \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
     Ventana_Creacion.cpp \
+    Ventana_SumarAcciones.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -28,10 +29,12 @@ HEADERS += \
     Listas_Cargadas.h \
     Persona.h \
     Ventana_Creacion.h \
+    Ventana_SumarAcciones.h \
     mainwindow.h
 
 FORMS += \
     Ventana_Creacion.ui \
+    Ventana_SumarAcciones.ui \
     mainwindow.ui
 
 # Default rules for deployment.
