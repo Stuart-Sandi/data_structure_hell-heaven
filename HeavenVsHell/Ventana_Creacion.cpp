@@ -35,13 +35,11 @@ void Ventana_Creacion::on_pushButton_clicked()
             msgBox.setWindowTitle("Error");
             msgBox.exec();
 
-            int cont = 0;
             Persona * tmp = this->datos->lPersonas->primerNodo;
-            while (tmp != NULL){
-                cont++;
+            while(tmp != NULL){
+                qDebug()<<"Cantidad de Hijos: "+QString::number(tmp->listaHijos.size());
                 tmp = tmp->next;
             }
-            qDebug()<<"Tamaño: "+QString::number(cont);
 
         }
         else{

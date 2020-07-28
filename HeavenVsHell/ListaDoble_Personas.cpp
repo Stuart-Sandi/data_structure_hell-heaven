@@ -46,10 +46,14 @@ void ListaDoble_Personas::generarMundo(int cGenerar){
         //INGRESA EN EL HASH DE FAMILIAS
         if (!this->familias.contains(nuevo->apellido)){
             QList<Persona*> lista;
+            lista.append(nuevo);
             this->familias.insert(nuevo->apellido, lista);
-            this->familias.take(nuevo->apellido).append(nuevo);
+            //this->familias.take(nuevo->apellido).append(nuevo);
         }else{
-            this->familias.take(nuevo->apellido).append(nuevo);
+            QList<Persona*> lista;
+            lista = this->familias.take(nuevo->apellido);
+            lista.append(nuevo);
+            this->familias.insert(nuevo->apellido,lista);
         }
     }
 
@@ -138,32 +142,41 @@ void ListaDoble_Personas::agregarFamilia(){
 
         Persona * tmp = this->listaTMP[i];
         int cantHijos = random(0,5);
-        QList <Persona*> tmpHijos = this->familias.take(tmp->apellido);
+        QList <Persona*> tmpHijos = this->familias.value(tmp->apellido);
 
-        for (int w = 0;w< cantHijos;w++) {
+        //PREGUNTA SI YA ES PADRE
+        if (!tmp->isPadre){
+            //ASIGNA LA CANTIDAD ALEATORIA DE HIJOS
+            for (int w = 0;w< cantHijos;w++) {
+                //RECORRE LA LISTA DEL HASH DEL MISMO APELLIDO
+                for (int j=0;j<tmpHijos.size();j++) {
 
-            for (int j=0;j<tmpHijos.size();j++) {
-
-                Persona * tmp2 = tmpHijos[j];
-                //PREGUNTA SI ES LA MISMA PERSONA A LA QUE SE LE VA A ASIGNAR HIJOS
-                if (tmp != tmp2){
-                    //PREGUNTA SI EL APELLIDO ES EL MISMO DE LA PERSONA QUE SE LE VA A AGREGAR HIJOS
-                    if(tmp2->apellido == tmp->apellido){
-                        //PREGUNTA SI EL PAIS ES EL MISMO DE LA PERSONA QUE SE LE VA A AGREGAR HIJOS
-                        if(tmp2->pais == tmp->pais){
-                            //PREGUNTA SI NO ES HIJO DE ALGUIEN
-                            if (!tmp2->isHijo){
-                                tmp->listaHijos.append(tmp2);
-                                tmp2->isHijo = true;
-                                tmp2->padre = tmp;
-                                tmp->isPadre = true;
+                    Persona * tmp2 = tmpHijos[j];
+                    //PREGUNTA SI ES LA MISMA PERSONA A LA QUE SE LE VA A ASIGNAR HIJOS
+                    if (tmp != tmp2){
+                        //PREGUNTA SI EL APELLIDO ES EL MISMO DE LA PERSONA QUE SE LE VA A AGREGAR HIJOS
+                        if(tmp2->apellido == tmp->apellido){
+                            //PREGUNTA SI EL PAIS ES EL MISMO DE LA PERSONA QUE SE LE VA A AGREGAR HIJOS
+                            if(tmp2->pais == tmp->pais){
+                                //PREGUNTA SI NO ES HIJO DE ALGUIEN
+                                if (!tmp2->isHijo){
+                                    //PREGUNTA SI EL FUTURO HIJO ES EL PADRE
+                                    if (tmp->padre != tmp2){
+                                        tmp->listaHijos.append(tmp2);
+                                        tmp2->isHijo = true;
+                                        tmp2->padre = tmp;
+                                        tmp->isPadre = true;
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
                 }
-            }
 
+            }
         }
+
 
     }
 }
