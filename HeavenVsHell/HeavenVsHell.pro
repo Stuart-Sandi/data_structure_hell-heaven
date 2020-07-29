@@ -20,6 +20,7 @@ SOURCES += \
     Listas_Cargadas.cpp \
     Ventana_Creacion.cpp \
     Ventana_SumarAcciones.cpp \
+    funcionesArchivos.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -30,6 +31,7 @@ HEADERS += \
     Persona.h \
     Ventana_Creacion.h \
     Ventana_SumarAcciones.h \
+    funcionesArchivos.h \
     mainwindow.h
 
 FORMS += \
