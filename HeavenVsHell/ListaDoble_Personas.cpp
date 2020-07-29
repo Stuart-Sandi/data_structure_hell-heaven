@@ -48,7 +48,6 @@ void ListaDoble_Personas::generarMundo(int cGenerar){
             QList<Persona*> lista;
             lista.append(nuevo);
             this->familias.insert(nuevo->apellido, lista);
-            //this->familias.take(nuevo->apellido).append(nuevo);
         }else{
             QList<Persona*> lista;
             lista = this->familias.take(nuevo->apellido);
@@ -95,7 +94,7 @@ void ListaDoble_Personas::insertarAlFinal(Persona * pPersona){
     }
 
     else{
-
+        pPersona->next = NULL;
         ultimoNodo->next = pPersona;
         pPersona->before = ultimoNodo;
         ultimoNodo = pPersona;
@@ -130,7 +129,8 @@ void ListaDoble_Personas::listaOrdenada(){
                 min = j;
             }
         }
-        listaTMP.swap(min,i);
+        //listaTMP.swap(min,i);
+        listaTMP.swapItemsAt(min, i);
     }
 }
 

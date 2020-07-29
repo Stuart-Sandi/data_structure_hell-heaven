@@ -28,18 +28,27 @@ void Ventana_Creacion::on_pushButton_clicked()
     if (x>0){
         if (validar == 1 || x>=100){
             validar = 1;
+            //GENERA EL MUNDO Y LE ASIGNA FAMILIA
             this->datos->lPersonas->generarMundo(x);
             this->datos->lPersonas->agregarFamilia();
+
+            //GENERA EL ARBOL DESDE 0
+            this->datos->arbol->raiz = nullptr;
+            this->datos->arbol->lMundo = this->datos->lPersonas;
+            this->datos->arbol->lMundoArbol = this->datos->lPersonas->listaTMP;
+            this->datos->arbol->crearArbolBB(x);
+            this->datos->arbol->asignarPadre(this->datos->arbol->raiz);
+
             QMessageBox msgBox;
             msgBox.setText(QString::number(x)+" humans generated");
             msgBox.setWindowTitle("Error");
             msgBox.exec();
 
-            Persona * tmp = this->datos->lPersonas->primerNodo;
-            while(tmp != NULL){
-                qDebug()<<"Cantidad de Hijos: "+QString::number(tmp->listaHijos.size());
-                tmp = tmp->next;
-            }
+//            Persona * tmp = this->datos->lPersonas->primerNodo;
+//            while(tmp != NULL){
+//                qDebug()<<"IDs: "+QString::number(tmp->id);
+//                tmp = tmp->next;
+//            }
 
         }
         else{
