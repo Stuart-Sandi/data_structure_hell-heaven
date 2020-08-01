@@ -204,13 +204,13 @@ QString ListaDoble_Personas::hallarContinente(int x){
      *
      */
     QString continente;
-    if (x<10){
+    if (x<5){
         continente = "America";
-    }else if(x<20){
+    }else if(x<10){
         continente = "Europa";
-    }else if(x<30){
+    }else if(x<15){
         continente = "Asia";
-    }else if(x<40){
+    }else if(x<20){
         continente = "Africa";
     }else{
         continente = "Oceania";
