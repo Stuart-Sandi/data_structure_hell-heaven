@@ -3,6 +3,7 @@
 
 #include <QList>
 #include <Persona.h>
+#include "ListaDoble_Personas.h"
 
 class funcionesArchivos
 {
@@ -10,7 +11,7 @@ public:
     funcionesArchivos(){}
 
     int random(int, int);
-    void sumarAcciones(QList<Persona*>, bool);
+    void sumarAcciones(ListaDoble_Personas *, bool);
     QList<Persona*> listaOrdenada(QList<Persona*>);
 
 };

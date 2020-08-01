@@ -40,8 +40,9 @@ void Ventana_Creacion::on_pushButton_clicked()
             this->datos->arbol->asignarPadre(this->datos->arbol->raiz);
 
             QMessageBox msgBox;
-            msgBox.setText(QString::number(x)+" humans generated");
-            msgBox.setWindowTitle("Error");
+            msgBox.setText(QString::number(x)+" humans generated.");
+            msgBox.setIcon(msgBox.Information);
+            msgBox.setWindowTitle("Information");
             msgBox.exec();
 
 //            Persona * tmp = this->datos->lPersonas->primerNodo;
@@ -53,14 +54,16 @@ void Ventana_Creacion::on_pushButton_clicked()
         }
         else{
             QMessageBox msgBox;
-            msgBox.setText("Solo se pueden generar un minimo de 100 personas en la primera ronda");
+            msgBox.setText("Solo se pueden generar un mínimo de 100 personas en la primera ronda.");
             msgBox.setWindowTitle("Error");
+            msgBox.setIcon(msgBox.Critical);
             msgBox.exec();
         }
     }else{
         QMessageBox msgBox;
-        msgBox.setText("Debe ingresar solo caracteres numericos mayores a 0");
+        msgBox.setText("Debe ingresar solo caracteres numéricos mayores a 0.");
         msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
         msgBox.exec();
     }
 
@@ -68,5 +71,6 @@ void Ventana_Creacion::on_pushButton_clicked()
 
 void Ventana_Creacion::on_pushButton_2_clicked()
 {
+    ui->lineEdit->setText("");
     this->setVisible(false);
 }

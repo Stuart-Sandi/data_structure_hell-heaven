@@ -24,6 +24,7 @@ Ventana_Arbol_Leaves::~Ventana_Arbol_Leaves()
 void Ventana_Arbol_Leaves::on_pushButton_2_clicked()
 {
     this->setVisible(false);
+    this->ui->textBrowser->setText("");
 }
 
 void Ventana_Arbol_Leaves::on_pushButton_3_clicked()

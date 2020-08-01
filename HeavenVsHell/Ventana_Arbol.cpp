@@ -66,4 +66,7 @@ void Ventana_Arbol::on_pushButton_2_clicked()
 void Ventana_Arbol::on_pushButton_3_clicked()
 {
     this->setVisible(false);
+    ui->label_3->setText("LEVELS: ");
+    ui->label_4->setText("NODES: ");
+    ui->treeWidget->clear();
 }

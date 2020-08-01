@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     //REFERENCIAS DE VENTANAS
     this->vCreacion = new Ventana_Creacion(0, this->datos);
     this->vArbol = new Ventana_Arbol(0, this->datos);
+    this->vAcciones = new Ventana_SumarAcciones(0, this->datos);
 
 }
 
@@ -36,5 +37,25 @@ void MainWindow::on_pushButton_2_clicked()
 {
     if (this->datos->arbol->raiz != nullptr){
         this->vArbol->setVisible(true);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Debe crear el mundo primero.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
+
+    }
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    if (this->datos->arbol->raiz != nullptr){
+        this->vAcciones->setVisible(true);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Debe crear el mundo primero.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
     }
 }

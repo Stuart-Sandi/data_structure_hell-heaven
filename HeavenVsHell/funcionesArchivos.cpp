@@ -28,25 +28,26 @@ QList<Persona*> funcionesArchivos::listaOrdenada(QList<Persona*> pLista){
     return lista;
 }
 
-void funcionesArchivos::sumarAcciones(QList <Persona*> pListaPersonas, bool pAccionBuena){
+void funcionesArchivos::sumarAcciones(ListaDoble_Personas * pListaPersonas, bool pAccionBuena){
 
-    if (pAccionBuena) {
+    Persona * tmp = pListaPersonas->primerNodo;
 
-        for (Persona * persona  : pListaPersonas) {
+    if (pAccionBuena) {// Si pAccionBuena es true agrega buenas acciones
 
+        while (tmp != NULL) {
             for (int i = 0; i < 7; i++) {
-                    persona->buenasAcciones[i] = random(0, 100);
+                    tmp->buenasAcciones[i] += random(0, 100);
             }
+            tmp = tmp->next;
         }
 
-    } else {
+    } else { // Si pAccionBuena es false agrega pecados
 
-        for (Persona * persona  : pListaPersonas) {
-
+        while (tmp != NULL) {
             for (int i = 0; i < 7; i++) {
-
-                    persona->pecados[i] = random(0, 100);
+                    tmp->pecados[i] += random(0, 100);
             }
+            tmp = tmp->next;
         }
     }
 }
