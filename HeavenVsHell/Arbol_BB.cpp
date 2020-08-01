@@ -17,24 +17,38 @@ void Arbol_BB::crearArbolBB(int x){
         }
         c++;
     }
-    cantidadArbol = cantidadArbol-1;
+    cantidadArbol = cantidadArbol-1;//Potencia hecha
+    this->cantNodos = cantidadArbol;
 
     //CREA LA LISTA CON LA CANTIDAD DE ELEMENTOS DEL ARBOL
     QList <Persona*> temporal;
-    int tArbol = temporal.size();
     qDebug()<<"Arbol inicial"+QString::number(cantidadArbol);
-    Persona * tmp = this->lMundo->primerNodo;
+
+    int aleatorio;
     for (int x = 0; x<cantidadArbol; x++){
-        temporal.append(tmp);
-        tmp = tmp->next;
+
+        while (true){
+            aleatorio = this->funciones->random(0,this->lMundoArbol.size()-1);
+            if (!temporal.contains(this->lMundoArbol[aleatorio])){
+                temporal.append(this->lMundoArbol[aleatorio]);
+                break;
+            }
+        }
+
     }
 
+    //ORDENA LA LISTA
+    temporal = this->funciones->listaOrdenada(temporal);
+
     //ASIGNA LA RAIZ AL ARBOL
-    tArbol = temporal.size();
+    int tArbol = temporal.size();
     for (int y = 0;y<tArbol; y++){
         raiz = insertarAVL(raiz,temporal[y]);
     }
+
 }
+
+
 //Hay que implementar la insercion
 
 
@@ -216,10 +230,12 @@ Nodo_Arbol *Arbol_BB::insertarPersona(Persona *dt){
  * Restricciones: Ninguna
  */
 Nodo_Arbol *Arbol_BB::insertarAVL(Nodo_Arbol *_raiz, Persona *dt){
+
     Nodo_Arbol *n1;
     if(_raiz == nullptr){
         _raiz = new Nodo_Arbol(dt);
         hc = true;
+
     }else if(dt->id < _raiz->valorNodo()->id){
         Nodo_Arbol * iz = insertarAVL(_raiz->subarbolIzdo(),dt);
         _raiz->ramaIzdo(iz);
@@ -292,6 +308,53 @@ void Arbol_BB::inOrder(Nodo_Arbol * nodo){
         inOrder(nodo->hijo_izq);
         listaSalvacion.append(nodo);
         inOrder(nodo->hijo_der);
+    }
+}
+
+void Arbol_BB::inOrderHojas(Nodo_Arbol * nodo){
+    if (nodo != nullptr){
+        inOrderHojas(nodo->hijo_izq);
+
+        if (nodo->hijo_izq == NULL){
+            this->infoHojas += "*****************************************************************\n";
+            this->infoHojas += "Id: "+QString::number(nodo->humano->id)+'\n';
+            this->infoHojas += "Nombre: "+nodo->humano->nombre+'\n';
+            this->infoHojas += "Apellido: "+nodo->humano->apellido+'\n';
+            this->infoHojas += "País: "+nodo->humano->pais+'\n';
+            this->infoHojas += "Creencia: "+nodo->humano->creencia+'\n';
+            this->infoHojas += "Ocupacion: "+nodo->humano->profesion+'\n';
+            this->infoHojas += "Fecha nacimiento: "+nodo->humano->fechaHoraNacimiento+"\n\n";
+
+            this->infoHojas += "[Lujuria: "+QString::number(nodo->humano->pecados[0])+", ";
+            this->infoHojas += "Gula: "+QString::number(nodo->humano->pecados[1])+", ";
+            this->infoHojas += "Avaricia: "+QString::number(nodo->humano->pecados[2])+", ";
+            this->infoHojas += "Pereza: "+QString::number(nodo->humano->pecados[3])+", ";
+            this->infoHojas += "Ira: "+QString::number(nodo->humano->pecados[4])+", ";
+            this->infoHojas += "Envidia: "+QString::number(nodo->humano->pecados[5])+", ";
+            this->infoHojas += "Soberbia: "+QString::number(nodo->humano->pecados[6])+"]"+"\n\n";
+
+            this->infoHojas += "[Castidad: "+QString::number(nodo->humano->buenasAcciones[0])+", ";
+            this->infoHojas += "Ayuno: "+QString::number(nodo->humano->buenasAcciones[1])+", ";
+            this->infoHojas += "Donación: "+QString::number(nodo->humano->buenasAcciones[2])+", ";
+            this->infoHojas += "Diligencia: "+QString::number(nodo->humano->buenasAcciones[3])+", ";
+            this->infoHojas += "Calma: "+QString::number(nodo->humano->buenasAcciones[4])+", ";
+            this->infoHojas += "Solidaridad: "+QString::number(nodo->humano->buenasAcciones[5])+", ";
+            this->infoHojas += "Humildad: "+QString::number(nodo->humano->buenasAcciones[6])+"]"+"\n\n";
+
+            this->infoHojas += "Hijos: [";
+            for (int i = 0;i<nodo->humano->listaHijos.size();i++) {
+                if (i != (nodo->humano->listaHijos.size()-1)){
+                    this->infoHojas += QString::number(nodo->humano->listaHijos[i]->id)+",";
+                }
+                else{
+                    this->infoHojas += QString::number(nodo->humano->listaHijos[i]->id);
+                }
+
+            }
+            this->infoHojas += "]\n\n";
+        }
+
+        inOrderHojas(nodo->hijo_der);
     }
 }
 

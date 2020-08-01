@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <Ventana_Creacion.h>
+#include <Ventana_Arbol.h>
 #include <Data.h>
 #include <QDebug>
 
@@ -17,11 +18,14 @@ class MainWindow : public QMainWindow
 public:
     Data * datos;
     Ventana_Creacion * vCreacion;
+    Ventana_Arbol * vArbol;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;

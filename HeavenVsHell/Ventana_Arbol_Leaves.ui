@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Ventana_Arbol_Leaves</class>
+ <widget class="QMainWindow" name="Ventana_Arbol_Leaves">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>753</width>
-    <height>576</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,34 +17,38 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>0</x>
       <y>0</y>
-      <width>761</width>
-      <height>581</height>
+      <width>771</width>
+      <height>541</height>
      </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="Imagenes.qrc">:/Listas/Fondo_Principal.png</pixmap>
+     <pixmap resource="Imagenes.qrc">:/Listas/fondo_arbol_leaves.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>110</y>
+      <width>681</width>
+      <height>361</height>
+     </rect>
+    </property>
+   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>180</x>
       <y>20</y>
-      <width>281</width>
+      <width>391</width>
       <height>81</height>
      </rect>
     </property>
@@ -63,32 +67,15 @@ color: rgb(188, 88, 5);</string>
      <number>5</number>
     </property>
     <property name="text">
-     <string>HELL vs HEAVEN</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>120</y>
-      <width>691</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 italic 18pt &quot;Times New Roman&quot;;
-color: rgb(188, 88, 5);</string>
-    </property>
-    <property name="text">
-     <string>GENERATE WORLD</string>
+     <string>LEAVES'S INFORMATION</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>180</y>
-      <width>691</width>
+      <x>230</x>
+      <y>480</y>
+      <width>481</width>
       <height>41</height>
      </rect>
     </property>
@@ -97,7 +84,24 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>TREE</string>
+     <string>GO BACK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>480</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 italic 18pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="text">
+     <string>SHOW</string>
     </property>
    </widget>
   </widget>

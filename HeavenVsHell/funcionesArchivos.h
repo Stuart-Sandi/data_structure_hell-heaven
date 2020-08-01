@@ -7,10 +7,11 @@
 class funcionesArchivos
 {
 public:
-    funcionesArchivos();
+    funcionesArchivos(){}
 
     int random(int, int);
     void sumarAcciones(QList<Persona*>, bool);
+    QList<Persona*> listaOrdenada(QList<Persona*>);
 
 };
 

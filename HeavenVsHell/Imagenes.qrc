@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>Listas/Fondo_Principal.png</file>
         <file>Listas/fondo_creacion.jpg</file>
+        <file>Listas/fondo_Arbol.jpg</file>
+        <file>Listas/fondo_arbol_leaves.jpg</file>
     </qresource>
 </RCC>

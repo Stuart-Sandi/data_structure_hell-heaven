@@ -19,6 +19,8 @@ SOURCES += \
     Arbol_BB.cpp \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
+    Ventana_Arbol.cpp \
+    Ventana_Arbol_Leaves.cpp \
     Ventana_Creacion.cpp \
     Ventana_SumarAcciones.cpp \
     funcionesArchivos.cpp \
@@ -32,12 +34,16 @@ HEADERS += \
     Listas_Cargadas.h \
     Nodo_Arbol.h \
     Persona.h \
+    Ventana_Arbol.h \
+    Ventana_Arbol_Leaves.h \
     Ventana_Creacion.h \
     Ventana_SumarAcciones.h \
     funcionesArchivos.h \
     mainwindow.h
 
 FORMS += \
+    Ventana_Arbol.ui \
+    Ventana_Arbol_Leaves.ui \
     Ventana_Creacion.ui \
     Ventana_SumarAcciones.ui \
     mainwindow.ui

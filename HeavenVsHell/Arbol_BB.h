@@ -2,11 +2,15 @@
 #define ARBOL_BB_H
 #include <QtMath>
 #include <Nodo_Arbol.h>
+#include <funcionesArchivos.h>
 #include <ListaDoble_Personas.h>
 
 
 struct Arbol_BB{
+    int cantNodos;
     int contador;
+    QString infoHojas;
+    funcionesArchivos * funciones;
     ListaDoble_Personas * lMundo;
     QList <Persona*> lMundoArbol;
     QList <Nodo_Arbol*> listaSalvacion;
@@ -14,12 +18,18 @@ struct Arbol_BB{
     QString nombre;
     bool hc;
     Arbol_BB(){
+        infoHojas = "";
+        cantNodos = 0;
+        funciones = new funcionesArchivos();
         contador = 0;
         lMundo = nullptr;
         raiz = nullptr;
         hc = false;
     }
     Arbol_BB(Nodo_Arbol *_raiz){
+        infoHojas = "";
+        cantNodos = 0;
+        funciones = new funcionesArchivos();
         contador = 0;
         lMundo = nullptr;
         raiz = _raiz;
@@ -45,6 +55,8 @@ struct Arbol_BB{
     void asignarPadre(Nodo_Arbol*);
     void inOrder(Nodo_Arbol*);
     void limpiar();
+    void inOrderHojas(Nodo_Arbol*);
+
 };
 
 #endif // ARBOL_BB_H

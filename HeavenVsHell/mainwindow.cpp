@@ -14,7 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(740,530);
 
     this->datos = new Data();
+
+    //REFERENCIAS DE VENTANAS
     this->vCreacion = new Ventana_Creacion(0, this->datos);
+    this->vArbol = new Ventana_Arbol(0, this->datos);
+
 }
 
 MainWindow::~MainWindow()
@@ -26,4 +30,11 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     this->vCreacion->setVisible(true);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    if (this->datos->arbol->raiz != nullptr){
+        this->vArbol->setVisible(true);
+    }
 }

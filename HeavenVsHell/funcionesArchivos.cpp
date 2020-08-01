@@ -10,6 +10,24 @@ int funcionesArchivos::random(int x, int y){
     return dato;
 }
 
+QList<Persona*> funcionesArchivos::listaOrdenada(QList<Persona*> pLista){
+    /*
+     *
+     */
+    QList<Persona*> lista = pLista;
+    int x = lista.size();
+    for (int i = 0; i<x; i++){
+        int min = i;
+        for (int j = i+1; j<x; j++){
+            if(lista[j]->id<lista[min]->id){
+                min = j;
+            }
+        }
+        lista.swapItemsAt(min, i);
+    }
+    return lista;
+}
+
 void funcionesArchivos::sumarAcciones(QList <Persona*> pListaPersonas, bool pAccionBuena){
 
     if (pAccionBuena) {
