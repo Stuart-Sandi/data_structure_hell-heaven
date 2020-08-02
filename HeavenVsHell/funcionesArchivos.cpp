@@ -46,7 +46,7 @@ void funcionesArchivos::sumarAcciones(ListaDoble_Personas * pListaPersonas, bool
 
     } else { // Si pAccionBuena es false agrega pecados
 
-        int numHeradado = 0;
+        int numHeredado = 0;
          int numAleatorio = 0;
 
         while (tmp != NULL) {
@@ -59,19 +59,19 @@ void funcionesArchivos::sumarAcciones(ListaDoble_Personas * pListaPersonas, bool
                     //Empieza la herencia
                     if (!tmp->listaHijos.empty()){ //Si la lista de hijos del padre no está vacía
 
-                        numHeradado = numAleatorio * 0.5; //Obtiene el 50% de los pecados
+                        numHeredado = numAleatorio * 0.5; //Obtiene el 50% de los pecados
 
                         for(Persona * hijo : tmp->listaHijos){ //For que recorre a los hijos
 
-                            hijo->pecados[i] += numHeradado; // Asigna el 50% de pecados del padre
+                            hijo->pecados[i] += numHeredado; // Asigna el 50% de pecados del padre
 
                             if(!hijo->listaHijos.empty()){ //Si la lista de nietos del padre no está vacía
 
-                                numHeradado = numAleatorio * 0.25; //Obtiene el 25% de los pecados
+                                numHeredado = numAleatorio * 0.25; //Obtiene el 25% de los pecados
 
                                 for(Persona * nieto : hijo->listaHijos){ //For que recorre a los nietos
 
-                                    nieto->pecados[i] += numHeradado; // Asigna el 25% de pecados del padre
+                                    nieto->pecados[i] += numHeredado; // Asigna el 25% de pecados del padre
 
                                 }
 
