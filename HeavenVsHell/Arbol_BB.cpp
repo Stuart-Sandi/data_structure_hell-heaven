@@ -331,7 +331,7 @@ void Arbol_BB::inOrderHojas(Nodo_Arbol * nodo){
             this->infoHojas += "Pereza: "+QString::number(nodo->humano->pecados[3])+", ";
             this->infoHojas += "Ira: "+QString::number(nodo->humano->pecados[4])+", ";
             this->infoHojas += "Envidia: "+QString::number(nodo->humano->pecados[5])+", ";
-            this->infoHojas += "Soberbia: "+QString::number(nodo->humano->pecados[6])+"]"+"\n\n";
+            this->infoHojas += "Soberbia: "+QString::number(nodo->humano->pecados[6])+"]"+ " Total: " + QString::number(nodo->humano->totalPecados) +"\n\n";
 
             this->infoHojas += "[Castidad: "+QString::number(nodo->humano->buenasAcciones[0])+", ";
             this->infoHojas += "Ayuno: "+QString::number(nodo->humano->buenasAcciones[1])+", ";
@@ -339,12 +339,12 @@ void Arbol_BB::inOrderHojas(Nodo_Arbol * nodo){
             this->infoHojas += "Diligencia: "+QString::number(nodo->humano->buenasAcciones[3])+", ";
             this->infoHojas += "Calma: "+QString::number(nodo->humano->buenasAcciones[4])+", ";
             this->infoHojas += "Solidaridad: "+QString::number(nodo->humano->buenasAcciones[5])+", ";
-            this->infoHojas += "Humildad: "+QString::number(nodo->humano->buenasAcciones[6])+"]"+"\n\n";
+            this->infoHojas += "Humildad: "+QString::number(nodo->humano->buenasAcciones[6])+"]"+ " Total: " + QString::number(nodo->humano->totalBuenasAcciones) +"\n\n";
 
             this->infoHojas += "Hijos: [";
             for (int i = 0;i<nodo->humano->listaHijos.size();i++) {
                 if (i != (nodo->humano->listaHijos.size()-1)){
-                    this->infoHojas += QString::number(nodo->humano->listaHijos[i]->id)+",";
+                    this->infoHojas += QString::number(nodo->humano->listaHijos[i]->id)+", ";
                 }
                 else{
                     this->infoHojas += QString::number(nodo->humano->listaHijos[i]->id);

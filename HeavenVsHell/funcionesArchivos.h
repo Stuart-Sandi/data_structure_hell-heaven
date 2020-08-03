@@ -12,7 +12,9 @@ public:
 
     int random(int, int);
     void sumarAcciones(ListaDoble_Personas *, bool);
+    void obtenerTotalAcciones(ListaDoble_Personas *, bool);
     QList<Persona*> listaOrdenada(QList<Persona*>);
+
 
 };
 

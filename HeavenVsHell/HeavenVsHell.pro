@@ -19,6 +19,7 @@ SOURCES += \
     Arbol_BB.cpp \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
+    Lugar.cpp \
     Ventana_Arbol.cpp \
     Ventana_Arbol_Leaves.cpp \
     Ventana_Creacion.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     Data.h \
     ListaDoble_Personas.h \
     Listas_Cargadas.h \
+    Lugar.h \
     Nodo_Arbol.h \
     Persona.h \
     Ventana_Arbol.h \

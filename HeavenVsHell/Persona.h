@@ -10,6 +10,8 @@ public:
 
     //ENTEROS
     long int id;
+    long int totalPecados;
+    long int totalBuenasAcciones;
 
     //STRINGS
     QString nombre;

@@ -44,10 +44,12 @@ void funcionesArchivos::sumarAcciones(ListaDoble_Personas * pListaPersonas, bool
 
         }
 
+        obtenerTotalAcciones(pListaPersonas, true); //Calcula total de buenasAcciones y los asigna a cada persona
+
     } else { // Si pAccionBuena es false agrega pecados
 
         int numHeredado = 0;
-         int numAleatorio = 0;
+        int numAleatorio = 0;
 
         while (tmp != NULL) {
 
@@ -85,5 +87,48 @@ void funcionesArchivos::sumarAcciones(ListaDoble_Personas * pListaPersonas, bool
             tmp = tmp->next;
 
         }
+
+
+        obtenerTotalAcciones(pListaPersonas, false); //Calcula total de pecados y los asigna a cada persona
+
     }
+}
+
+void funcionesArchivos::obtenerTotalAcciones(ListaDoble_Personas * pListaPersonas, bool pAccionBuena){
+
+    Persona * tmp = pListaPersonas->primerNodo;
+    int acciones;
+
+    if(pAccionBuena){ //Si pAccionBuena es true, suma el total de buenas acciones
+
+        while (tmp != NULL) {
+            acciones = 0;
+
+            for (int i = 0; i < 7; i++) {
+                    acciones += tmp->buenasAcciones[i];
+            }
+
+            tmp->totalBuenasAcciones = acciones;
+
+            tmp = tmp->next;
+
+        }
+
+    } else { //Si pAccionBuena es true, suma el total de pecados
+
+        while (tmp != NULL) {
+            acciones = 0;
+
+            for (int i = 0; i < 7; i++) {
+                    acciones += tmp->pecados[i];
+            }
+
+            tmp->totalPecados = acciones;
+
+            tmp = tmp->next;
+
+        }
+
+    }
+
 }
