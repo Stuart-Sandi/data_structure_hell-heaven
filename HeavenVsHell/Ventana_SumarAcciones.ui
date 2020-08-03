@@ -130,7 +130,6 @@ color: rgb(188, 88, 5);</string>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="Imagenes.qrc"/>
