@@ -124,6 +124,20 @@ void Ventana_Consultas_Acciones::crearMensajeFamilias(Persona * tmp){
 
 void Ventana_Consultas_Acciones::on_pushButton_5_clicked()
 {
+    //LIMPIA LOS DATOS DE LA PANTALLA
+    this->ui->label_4->setText("ESTADO DE PECADOS DE UNA FAMILIA");
+    this->ui->textBrowser->setText("TOP 10 PAISES MAS PECADORES:\n");
+    this->ui->textBrowser_2->setText("TOP 5 PAISES MENOS PECADORES:\n");
+    this->ui->comboBox->setCurrentIndex(0);
+    this->ui->lineEdit->setText("");
+    this->ui->textBrowser_3->setText("");
+    this->ui->america_label->clear();
+    this->ui->europa_label->clear();
+    this->ui->africa_label->clear();
+    this->ui->asia_label->clear();
+    this->ui->oceania_label->clear();
+
+
     this->setVisible(false);
 }
 
