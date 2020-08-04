@@ -80,7 +80,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>GENERATE WORLD</string>
+     <string>GENERAR MUNDO</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -97,7 +97,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>TREE</string>
+     <string>ARBOL</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -114,7 +114,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>ADD ACTIONS</string>
+     <string>AÑADIR ACCIONES</string>
     </property>
    </widget>
   </widget>

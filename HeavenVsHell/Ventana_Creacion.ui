@@ -57,15 +57,15 @@ color: rgb(188, 88, 5);</string>
      <number>5</number>
     </property>
     <property name="text">
-     <string>GENERATE WORLD</string>
+     <string>GENERAR MUNDO</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>130</x>
       <y>210</y>
-      <width>261</width>
+      <width>311</width>
       <height>41</height>
      </rect>
     </property>
@@ -84,13 +84,13 @@ color: rgb(188, 88, 5);</string>
      <number>5</number>
     </property>
     <property name="text">
-     <string>Humans to Generate: </string>
+     <string>HUMANOS A GENERAR:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>460</x>
       <y>210</y>
       <width>141</width>
       <height>41</height>
@@ -115,7 +115,7 @@ color: rgb(188, 88, 5);</string>
 font: italic 20pt &quot;Times New Roman&quot;;</string>
     </property>
     <property name="text">
-     <string>GENERATE</string>
+     <string>GENERAR</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -132,7 +132,7 @@ font: italic 20pt &quot;Times New Roman&quot;;</string>
 font: italic 20pt &quot;Times New Roman&quot;;</string>
     </property>
     <property name="text">
-     <string>GO BACK</string>
+     <string>VOLVER</string>
     </property>
    </widget>
   </widget>

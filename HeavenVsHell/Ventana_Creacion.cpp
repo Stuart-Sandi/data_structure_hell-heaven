@@ -8,7 +8,7 @@ Ventana_Creacion::Ventana_Creacion(QWidget *parent, Data * pDatos) :
     ui->setupUi(this);
 
     //Propiedades de la ventana Principal
-    this->setWindowTitle("Hell vs Heaven: Generate World");
+    this->setWindowTitle("Hell vs Heaven: Generar Mundo");
     this->setWindowFlags(Qt::WindowMaximizeButtonHint);
     this->setWindowFlags(Qt::WindowCloseButtonHint);
     this->setFixedSize(740,530);

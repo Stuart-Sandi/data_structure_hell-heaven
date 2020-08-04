@@ -84,4 +84,29 @@ void Listas_Cargadas::CargarListas(){
              profesiones.append(line);
         }
     }
+
+    {
+    /*
+     * Funcion encargada de asignar los paises y continentes a las listas de paises y continentes
+    */
+        int tama = this->paises.size();
+        Lugar * tmp;
+
+        for (int i = 0; i<tama ;i++) {
+            tmp = new Lugar(this->paises[i]);
+            this->paises2.append(tmp);
+        }
+
+        tmp =  new Lugar("America");
+        this->continetes.append(tmp);
+        tmp =  new Lugar("Africa");
+        this->continetes.append(tmp);
+        tmp =  new Lugar("Europa");
+        this->continetes.append(tmp);
+        tmp =  new Lugar("Asia");
+        this->continetes.append(tmp);
+        tmp =  new Lugar("Oceania");
+        this->continetes.append(tmp);
+    }
+
 }

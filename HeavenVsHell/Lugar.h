@@ -8,10 +8,12 @@ struct Lugar
 
     QString nombre;
     int totalPecados;
+    int totalBuenasAcciones;
 
-    Lugar(QString pNombre, int pTotalPEcados){
+    Lugar(QString pNombre){
         this->nombre = pNombre;
-        this->totalPecados = pTotalPEcados;
+        this->totalPecados = 0;
+        this->totalBuenasAcciones = 0;
     }
 
 };

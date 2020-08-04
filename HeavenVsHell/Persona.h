@@ -37,13 +37,38 @@ public:
     Persona * next;
     Persona * before;
 
-    Persona();
+    Persona(){
+        //ENTEROS
+        this->id = 0;
+        this->totalPecados = 0;
+        this->totalBuenasAcciones = 0;
 
-    Persona(int pId, QString pNombre, QString pApellido, QString pPais, QString pCreencia, QString pProfesion, QString pCorreo, QString pFechaNacimiento, QString pContinente){
+        //STRINGS
+        this->nombre = "";
+        this->apellido = "";
+        this->pais = "";
+        this->creencia = "";
+        this->profesion = "";
+        this->correo = "";
+        this->fechaHoraNacimiento = "";
+        this->continente = "";
+
+        //BOOLEANOS
+        this->isPadre = false;
+        this->isHijo = false;
+
+        //PERSONA
+        this->padre = NULL;
+        this->next = NULL;
+        this->before = NULL;
+    };
+
+    Persona(long int pId, QString pNombre, QString pApellido, QString pPais, QString pCreencia, QString pProfesion, QString pCorreo, QString pFechaNacimiento, QString pContinente){
 
         //ENTEROS
         this->id = pId;
-        this->continente = pContinente;
+        this->totalPecados = 0;
+        this->totalBuenasAcciones = 0;
 
         //STRINGS
         this->nombre = pNombre;
@@ -53,6 +78,7 @@ public:
         this->profesion = pProfesion;
         this->correo = pCorreo;
         this->fechaHoraNacimiento = pFechaNacimiento;
+        this->continente = pContinente;
 
         //BOOLEANOS
         this->isPadre = false;

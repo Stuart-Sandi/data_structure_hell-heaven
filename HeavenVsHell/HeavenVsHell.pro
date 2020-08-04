@@ -22,6 +22,7 @@ SOURCES += \
     Lugar.cpp \
     Ventana_Arbol.cpp \
     Ventana_Arbol_Leaves.cpp \
+    Ventana_Consultas_Acciones.cpp \
     Ventana_Creacion.cpp \
     Ventana_SumarAcciones.cpp \
     funcionesArchivos.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     Persona.h \
     Ventana_Arbol.h \
     Ventana_Arbol_Leaves.h \
+    Ventana_Consultas_Acciones.h \
     Ventana_Creacion.h \
     Ventana_SumarAcciones.h \
     funcionesArchivos.h \
@@ -46,6 +48,7 @@ HEADERS += \
 FORMS += \
     Ventana_Arbol.ui \
     Ventana_Arbol_Leaves.ui \
+    Ventana_Consultas_Acciones.ui \
     Ventana_Creacion.ui \
     Ventana_SumarAcciones.ui \
     mainwindow.ui

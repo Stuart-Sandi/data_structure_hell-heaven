@@ -8,12 +8,13 @@ Ventana_SumarAcciones::Ventana_SumarAcciones(QWidget *parent, Data * pDatos) :
     ui->setupUi(this);
 
     //Propiedades de la ventana Principal
-    this->setWindowTitle("Hell vs Heaven: Add actions");
+    this->setWindowTitle("Hell vs Heaven: Añadir Acciones");
     this->setWindowFlags(Qt::WindowMaximizeButtonHint);
     this->setWindowFlags(Qt::WindowCloseButtonHint);
     this->setFixedSize(740,530);
 
     this->datos = pDatos;
+    this->vConsultas = new Ventana_Consultas_Acciones(0, this->datos);
 }
 
 Ventana_SumarAcciones::~Ventana_SumarAcciones()
@@ -44,4 +45,9 @@ void Ventana_SumarAcciones::on_btn_Pecados_clicked()
 void Ventana_SumarAcciones::on_btn_GoBack_clicked()
 {
     this->setVisible(false);
+}
+
+void Ventana_SumarAcciones::on_btn_GoBack_2_clicked()
+{
+    this->vConsultas->setVisible(true);
 }

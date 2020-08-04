@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QList>
+#include <Lugar.h>
 
 struct Listas_Cargadas{
 
@@ -14,6 +15,8 @@ struct Listas_Cargadas{
     QList <QString> creencias;
     QList <QString> paises;
     QList <QString> profesiones;
+    QList <Lugar*> paises2;
+    QList <Lugar*> continetes;
 
     Listas_Cargadas();
     void CargarListas();

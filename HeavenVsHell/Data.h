@@ -18,6 +18,8 @@ struct Data{
     Data(){
        this->arbol = new Arbol_BB();
        this->listasCargadas = new Listas_Cargadas();
+       this->paises = this->listasCargadas->paises2;
+       this->continentes = this->listasCargadas->continetes;
        this->lPersonas = new ListaDoble_Personas(this->listasCargadas);
     }
 };

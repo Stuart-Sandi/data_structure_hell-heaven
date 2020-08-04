@@ -8,7 +8,7 @@ Ventana_Arbol::Ventana_Arbol(QWidget *parent, Data * pDatos) :
     ui->setupUi(this);
 
     //Propiedades de la ventana Principal
-    this->setWindowTitle("Hell vs Heaven: Tree");
+    this->setWindowTitle("Hell vs Heaven: Arbol");
     this->setWindowFlags(Qt::WindowMaximizeButtonHint);
     this->setWindowFlags(Qt::WindowCloseButtonHint);
     this->setFixedSize(740,530);

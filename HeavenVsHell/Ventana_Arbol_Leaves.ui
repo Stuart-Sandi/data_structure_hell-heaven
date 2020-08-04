@@ -46,9 +46,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>160</x>
       <y>20</y>
-      <width>391</width>
+      <width>411</width>
       <height>81</height>
      </rect>
     </property>
@@ -67,7 +67,7 @@ color: rgb(188, 88, 5);</string>
      <number>5</number>
     </property>
     <property name="text">
-     <string>LEAVES'S INFORMATION</string>
+     <string>INFORMACION DE HOJAS</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -84,7 +84,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>GO BACK</string>
+     <string>VOLVER</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -101,7 +101,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>SHOW</string>
+     <string>VER</string>
     </property>
    </widget>
   </widget>

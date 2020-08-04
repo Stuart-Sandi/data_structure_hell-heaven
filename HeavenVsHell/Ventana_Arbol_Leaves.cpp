@@ -8,7 +8,7 @@ Ventana_Arbol_Leaves::Ventana_Arbol_Leaves(QWidget *parent, Data * pDatos) :
     ui->setupUi(this);
 
     //Propiedades de la ventana Principal
-    this->setWindowTitle("Hell vs Heaven: Tree Leaves's Information");
+    this->setWindowTitle("Hell vs Heaven: Arbol: Informacion de Hojas");
     this->setWindowFlags(Qt::WindowMaximizeButtonHint);
     this->setWindowFlags(Qt::WindowCloseButtonHint);
     this->setFixedSize(740,530);
