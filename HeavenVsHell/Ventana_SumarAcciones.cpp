@@ -29,6 +29,7 @@ void Ventana_SumarAcciones::on_btn_BuenasAcciones_clicked()
     msgBox.setText("Se agregaron buenas acciones con éxito.");
     msgBox.setWindowTitle("Información");
     msgBox.setIcon(msgBox.Information);
+    this->buenasAccionesAgregadas = true;
     msgBox.exec();
 }
 
@@ -39,6 +40,7 @@ void Ventana_SumarAcciones::on_btn_Pecados_clicked()
     msgBox.setText("Se agregaron pecados con éxito.");
     msgBox.setWindowTitle("Información");
     msgBox.setIcon(msgBox.Information);
+    this->pecadosAgregados = true;
     msgBox.exec();
 }
 
@@ -49,5 +51,22 @@ void Ventana_SumarAcciones::on_btn_GoBack_clicked()
 
 void Ventana_SumarAcciones::on_btn_GoBack_2_clicked()
 {
-    this->vConsultas->setVisible(true);
+
+    if (accionesAgregadas(this->pecadosAgregados, this->buenasAccionesAgregadas)) {
+
+       this->vConsultas->setVisible(true);
+
+    } else {
+
+        QMessageBox msgBox;
+        msgBox.setText("Se deben agregar pecados y buenas acciones primero.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
+    }
+}
+
+bool Ventana_SumarAcciones::accionesAgregadas(bool pPecados, bool pAccionBuenas)
+{
+    return pPecados && pAccionBuenas;
 }

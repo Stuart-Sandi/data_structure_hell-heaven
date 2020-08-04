@@ -80,9 +80,9 @@ color: rgb(255, 255, 255);</string>
     <widget class="QLabel" name="america_label">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>70</x>
        <y>50</y>
-       <width>71</width>
+       <width>111</width>
        <height>241</height>
       </rect>
      </property>

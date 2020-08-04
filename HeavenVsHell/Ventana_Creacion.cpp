@@ -40,7 +40,7 @@ void Ventana_Creacion::on_pushButton_clicked()
             this->datos->arbol->asignarPadre(this->datos->arbol->raiz);
 
             QMessageBox msgBox;
-            msgBox.setText(QString::number(x)+" humans generated.");
+            msgBox.setText(QString::number(x)+" humanos han sido generados.");
             msgBox.setIcon(msgBox.Information);
             msgBox.setWindowTitle("Information");
             msgBox.exec();

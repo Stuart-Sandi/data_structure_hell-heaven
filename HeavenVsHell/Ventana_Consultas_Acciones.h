@@ -18,6 +18,7 @@ public:
     QList <Persona*> lista;
     Data * datos;
     QString mensaje;
+
     explicit Ventana_Consultas_Acciones(QWidget *parent = nullptr, Data * pDatos = nullptr);
     ~Ventana_Consultas_Acciones();
 

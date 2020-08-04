@@ -19,10 +19,16 @@ public:
     Data * datos;
     Ventana_Consultas_Acciones * vConsultas;
     funcionesArchivos * fa = new funcionesArchivos();
+    bool pecadosAgregados = false;
+    bool buenasAccionesAgregadas = false;
+
     explicit Ventana_SumarAcciones(QWidget *parent = nullptr, Data* pData = NULL);
     ~Ventana_SumarAcciones();
 
 private slots:
+
+    bool accionesAgregadas(bool, bool);
+
     void on_btn_BuenasAcciones_clicked();
 
     void on_btn_Pecados_clicked();
