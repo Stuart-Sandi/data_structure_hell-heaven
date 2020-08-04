@@ -126,3 +126,88 @@ void Ventana_Consultas_Acciones::on_pushButton_5_clicked()
 {
     this->setVisible(false);
 }
+
+void Ventana_Consultas_Acciones::on_pushButton_3_clicked()
+{
+    limpiarListas();
+    asignarAccionesAListas();
+    this->datos->paises = ordenarLista(this->datos->paises);
+    this->datos->continentes = ordenarLista(this->datos->continentes);
+    //mostrarDatosPaises();
+    //mostrarDatosContinentes();
+
+}
+
+void Ventana_Consultas_Acciones::limpiarListas(){
+    int tama = this->datos->paises.size();
+
+    for (int i = 0;i<tama;i++) {
+        this->datos->paises[i]->totalPecados = 0;
+        this->datos->paises[i]->totalBuenasAcciones = 0;
+    }
+
+    tama = this->datos->continentes.size();
+    for (int i = 0;i<tama;i++) {
+        this->datos->continentes[i]->totalPecados = 0;
+        this->datos->continentes[i]->totalBuenasAcciones = 0;
+    }
+
+}
+
+void Ventana_Consultas_Acciones::asignarAccionesAListas(){
+    Persona * tmp = this->datos->lPersonas->primerNodo;
+    while (tmp != NULL){
+
+        int tama = this->datos->paises.size();
+        for (int i = 0;i<tama;i++) {
+
+            if(this->datos->paises[i]->nombre == tmp->pais){
+
+                if (this->ui->comboBox->currentIndex() == 0){
+                    this->datos->paises[i]->totalPecados += tmp->totalPecados;
+                }else{
+                    this->datos->paises[i]->totalBuenasAcciones += tmp->totalBuenasAcciones;
+                }
+                break;
+            }
+        }
+
+        tama = this->datos->continentes.size();
+        for (int i = 0;i<tama;i++) {
+
+            if (this->datos->continentes[i]->nombre == tmp->continente){
+
+                if (this->ui->comboBox->currentIndex() == 0){
+                    this->datos->continentes[i]->totalPecados += tmp->totalPecados;
+                }else{
+                    this->datos->continentes[i]->totalBuenasAcciones += tmp->totalBuenasAcciones;
+                }
+                break;
+            }
+        }
+        tmp = tmp->next;
+    }
+}
+
+QList<Lugar*> Ventana_Consultas_Acciones::ordenarLista(QList<Lugar*> tmp){
+    QList<Lugar*> modify = tmp;
+    int x = modify.size();
+    for (int i = 0; i<x; i++){
+        int min = i;
+        for (int j = i+1; j<x; j++){
+
+            if (this->ui->comboBox->currentIndex() == 0){
+                if(modify[j]->totalPecados<modify[min]->totalPecados){
+                    min = j;
+                }
+            }else{
+                if(modify[j]->totalBuenasAcciones<modify[min]->totalBuenasAcciones){
+                    min = j;
+                }
+            }
+
+        }
+        lista.swapItemsAt(min, i);
+    }
+    return modify;
+}

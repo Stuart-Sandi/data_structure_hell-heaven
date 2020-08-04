@@ -25,6 +25,8 @@ public:
     void limpiarListas();
     void asignarAccionesAListas();
     QList <Lugar*> ordenarLista(QList<Lugar*>);
+    void mostrarDatosPaises();
+    void mostrarDatosContinentes();
 
 private slots:
     void on_comboBox_activated(int index);
