@@ -77,69 +77,99 @@ color: rgb(255, 255, 255);</string>
     <property name="title">
      <string>CONTINENTES</string>
     </property>
-    <widget class="QLabel" name="america_Label">
+    <widget class="QLabel" name="america_label">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>70</y>
+       <x>90</x>
+       <y>50</y>
        <width>71</width>
-       <height>191</height>
+       <height>241</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>AMERICA</string>
      </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QLabel" name="africa">
+    <widget class="QLabel" name="africa_label">
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>160</y>
+       <y>140</y>
        <width>71</width>
        <height>111</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string>AFRICA</string>
      </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QLabel" name="america_Label_2">
+    <widget class="QLabel" name="europa_label">
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>70</y>
+       <y>50</y>
        <width>71</width>
        <height>91</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string>EUROPA</string>
      </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QLabel" name="america_Label_3">
+    <widget class="QLabel" name="asia_label">
      <property name="geometry">
       <rect>
-       <x>340</x>
+       <x>290</x>
        <y>50</y>
        <width>101</width>
        <height>131</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string>ASIA</string>
      </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QLabel" name="america_Label_4">
+    <widget class="QLabel" name="oceania_label">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>220</y>
+       <x>310</x>
+       <y>200</y>
        <width>71</width>
        <height>71</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string>OCEANIA</string>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -165,23 +195,6 @@ color: rgb(255, 255, 255);</string>
       <string>CONSULTAS BUENAS ACCIONES</string>
      </property>
     </item>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>510</y>
-      <width>491</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 italic 18pt &quot;Times New Roman&quot;;
-color: rgb(188, 88, 5);</string>
-    </property>
-    <property name="text">
-     <string>MOSTRAR</string>
-    </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
@@ -337,6 +350,23 @@ color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
      <string>VOLVER</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>510</y>
+      <width>491</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 italic 18pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="text">
+     <string>MOSTRAR</string>
     </property>
    </widget>
   </widget>

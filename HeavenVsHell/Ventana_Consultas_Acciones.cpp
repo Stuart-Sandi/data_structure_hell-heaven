@@ -127,17 +127,6 @@ void Ventana_Consultas_Acciones::on_pushButton_5_clicked()
     this->setVisible(false);
 }
 
-void Ventana_Consultas_Acciones::on_pushButton_3_clicked()
-{
-    limpiarListas();
-    asignarAccionesAListas();
-    this->datos->paises = ordenarLista(this->datos->paises);
-    this->datos->continentes = ordenarLista(this->datos->continentes);
-    //mostrarDatosPaises();
-    //mostrarDatosContinentes();
-
-}
-
 void Ventana_Consultas_Acciones::limpiarListas(){
     int tama = this->datos->paises.size();
 
@@ -192,6 +181,7 @@ void Ventana_Consultas_Acciones::asignarAccionesAListas(){
 QList<Lugar*> Ventana_Consultas_Acciones::ordenarLista(QList<Lugar*> tmp){
     QList<Lugar*> modify = tmp;
     int x = modify.size();
+
     for (int i = 0; i<x; i++){
         int min = i;
         for (int j = i+1; j<x; j++){
@@ -207,7 +197,81 @@ QList<Lugar*> Ventana_Consultas_Acciones::ordenarLista(QList<Lugar*> tmp){
             }
 
         }
-        lista.swapItemsAt(min, i);
+        modify.swapItemsAt(min, i);
     }
     return modify;
+}
+
+void Ventana_Consultas_Acciones::mostrarDatosPaises(){
+
+    QString mensaje = "";
+    if (this->ui->comboBox->currentIndex() == 0){
+        this->ui->textBrowser->setText("TOP 10 PAISES MAS PECADORES:\n");
+        this->ui->textBrowser_2->setText("TOP 5 PAISES MENOS PECADORES:\n");
+    }else{
+        this->ui->textBrowser->setText("TOP 10 PAISES CON MAS BUENAS ACCIONES:\n");
+        this->ui->textBrowser_2->setText("TOP 5 PAISES CON MENOS BUENAS ACCIONES:\n");
+    }
+    int contador = 1;
+
+    int tama = this->datos->paises.size()-11;
+    for (int i = 24;i>tama;i--) {
+        if (this->ui->comboBox->currentIndex() == 0){
+            mensaje += QString::number(contador)+"/ "+this->datos->paises[i]->nombre+", Total: "+QString::number(this->datos->paises[i]->totalPecados)+"\n";
+        }else{
+            mensaje += QString::number(contador)+"/ "+this->datos->paises[i]->nombre+", Total: "+QString::number(this->datos->paises[i]->totalBuenasAcciones)+"\n";
+        }
+        contador++;
+    }
+    this->ui->textBrowser->append(mensaje);
+    mensaje = "";
+
+    contador = 1;
+    for (int i = 0;i<5;i++) {
+        if (this->ui->comboBox->currentIndex() == 0){
+            mensaje += QString::number(contador)+"/ "+this->datos->paises[i]->nombre+", Total: "+QString::number(this->datos->paises[i]->totalPecados)+"\n";
+        }else{
+            mensaje += QString::number(contador)+"/ "+this->datos->paises[i]->nombre+", Total: "+QString::number(this->datos->paises[i]->totalBuenasAcciones)+"\n";
+        }
+        contador++;
+    }
+    this->ui->textBrowser_2->append(mensaje);
+}
+
+void Ventana_Consultas_Acciones::on_pushButton_6_clicked()
+{
+        qDebug()<<"tamano paises: "+QString::number(this->datos->paises.size());
+        limpiarListas();
+        asignarAccionesAListas();
+        this->datos->paises = ordenarLista(this->datos->paises);
+        this->datos->continentes = ordenarLista(this->datos->continentes);
+        mostrarDatosPaises();
+        mostrarDatosContinentes();
+
+        for (int i = 0;i<this->datos->continentes.size();i++) {
+            qDebug()<<this->datos->continentes[i]->nombre<<this->datos->continentes[i]->totalPecados;
+            qDebug()<<this->datos->continentes[i]->nombre<<this->datos->continentes[i]->totalBuenasAcciones;
+        }
+
+}
+
+void Ventana_Consultas_Acciones::mostrarDatosContinentes(){
+
+    for (int i = 1;i<=this->datos->continentes.size();i++) {
+        QString continente = this->datos->continentes[i-1]->nombre;
+        QString datoNombre = continente+QString::number(i)+".png";
+        QPixmap pix("../HeavenVsHell/Listas/"+datoNombre);
+
+        if (continente == "America"){
+            this->ui->america_label->setPixmap(pix);
+        }else if (continente == "Europa"){
+            this->ui->europa_label->setPixmap(pix);
+        }else if (continente == "Africa"){
+            this->ui->africa_label->setPixmap(pix);
+        }else if (continente == "Asia"){
+            this->ui->asia_label->setPixmap(pix);
+        }else{
+            this->ui->oceania_label->setPixmap(pix);
+        }
+    }
 }
