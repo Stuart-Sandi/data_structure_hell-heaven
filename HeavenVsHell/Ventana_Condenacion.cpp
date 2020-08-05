@@ -167,7 +167,7 @@ void Ventana_Condenacion::calcularDatos(QList<Persona*> listaDemonio){
                 minimo = p->pecados[demonio];
             }
 
-            mensaje += this->datosPersona(p,contador);
+            mensaje += this->datosPersona(p);
         }
 
         promedio = promedio/cantHumanos;
@@ -187,7 +187,7 @@ void Ventana_Condenacion::calcularDatos(QList<Persona*> listaDemonio){
 
 }
 
-QString Ventana_Condenacion::datosPersona(Persona * humano, int cont){
+QString Ventana_Condenacion::datosPersona(Persona * humano){
     int demonio = this->ui->comboBox->currentIndex();
     QString mensaje;
 

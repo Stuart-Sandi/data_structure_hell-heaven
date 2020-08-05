@@ -25,7 +25,7 @@ public:
     QList <Persona*> ordenarListaPecados(int,QList<Persona*>);
     void actualizarDemonio(int);
     void log();
-    QString datosPersona(Persona*,int);
+    QString datosPersona(Persona*);
 
 private slots:
     void sendMail(QString);
