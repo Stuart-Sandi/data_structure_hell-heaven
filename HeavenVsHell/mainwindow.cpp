@@ -15,6 +15,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->datos = new Data();
 
+    //CARGA HASH DE DEMONIOS
+    for (int i = 0; i < 7 ; i++) {
+
+        QList<Persona*> tmp;
+
+        this->datos->demonios.insert(i, tmp);
+
+    }
+
+
     //REFERENCIAS DE VENTANAS
     this->vCreacion = new Ventana_Creacion(0, this->datos);
     this->vArbol = new Ventana_Arbol(0, this->datos);

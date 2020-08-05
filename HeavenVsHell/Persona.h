@@ -31,6 +31,9 @@ public:
     //BOOLEANOS
     bool isPadre;
     bool isHijo;
+    bool inWorld;
+    bool inHeaven;
+    bool inHell;
 
     //PERSONA
     Persona * padre;
@@ -56,6 +59,9 @@ public:
         //BOOLEANOS
         this->isPadre = false;
         this->isHijo = false;
+        this->inWorld = true;
+        this->inHeaven = false;
+        this->inHell = false;
 
         //PERSONA
         this->padre = NULL;
@@ -83,6 +89,9 @@ public:
         //BOOLEANOS
         this->isPadre = false;
         this->isHijo = false;
+        this->inWorld = true;
+        this->inHeaven = false;
+        this->inHell = false;
 
         //PERSONA
         this->padre = NULL;

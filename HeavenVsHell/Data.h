@@ -14,6 +14,14 @@ struct Data{
     QList<Lugar*> continentes;
     QList<Lugar*> paises;
 
+    QString nombreDemonios[7] = {"Asmodeo", "Belfegor", "Mammón", "Abadón", "Satán", "Belcebú", "Lucifer"};
+    QHash <int, QList<Persona*>> demonios;
+
+
+
+    QHash <int, QList<Persona*>> infierno;
+    //QHash <int, QList<Persona*>> cielo;
+
 
     Data(){
        this->arbol = new Arbol_BB();
