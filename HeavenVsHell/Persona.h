@@ -26,6 +26,8 @@ public:
     //LISTAS
     int pecados[7] = {0,0,0,0,0,0,0};
     int buenasAcciones[7] = {0,0,0,0,0,0,0};
+    int restaPecados[7] = {0,0,0,0,0,0,0};
+    int restaBuenasAcciones[7] = {0,0,0,0,0,0,0};
     QList <Persona*> listaHijos;
 
     //BOOLEANOS

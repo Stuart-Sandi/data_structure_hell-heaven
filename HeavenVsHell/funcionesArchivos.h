@@ -13,6 +13,9 @@ public:
     int random(int, int);
     void sumarAcciones(ListaDoble_Personas *, bool);
     void obtenerTotalAcciones(ListaDoble_Personas *, bool);
+    void obtenerResta(ListaDoble_Personas*);
+    QString obtenerFechaHoraActual();
+    QString obtenerFechaActual();
     QList<Persona*> listaOrdenada(QList<Persona*>);
 
 

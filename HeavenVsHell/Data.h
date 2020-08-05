@@ -11,6 +11,7 @@ struct Data{
     Arbol_BB * arbol;
     Listas_Cargadas * listasCargadas;
     ListaDoble_Personas * lPersonas;
+    QList <Persona*> listaPersonasTMP;
     QList<Lugar*> continentes;
     QList<Lugar*> paises;
 
@@ -19,7 +20,7 @@ struct Data{
 
 
 
-    QHash <int, QList<Persona*>> infierno;
+    QList<Persona*> infierno;
     //QHash <int, QList<Persona*>> cielo;
 
 

@@ -87,11 +87,10 @@ void funcionesArchivos::sumarAcciones(ListaDoble_Personas * pListaPersonas, bool
             tmp = tmp->next;
 
         }
-
-
         obtenerTotalAcciones(pListaPersonas, false); //Calcula total de pecados y los asigna a cada persona
 
     }
+
 }
 
 void funcionesArchivos::obtenerTotalAcciones(ListaDoble_Personas * pListaPersonas, bool pAccionBuena){
@@ -130,5 +129,39 @@ void funcionesArchivos::obtenerTotalAcciones(ListaDoble_Personas * pListaPersona
         }
 
     }
+
+    this->obtenerResta(pListaPersonas);//CALCULA LA RESTA DE LAS ACCIONES
+
+}
+
+void funcionesArchivos::obtenerResta(ListaDoble_Personas * pLista){
+
+    Persona * tmp = pLista->primerNodo;
+
+    while (tmp != NULL){
+
+        for (int i = 0;i<7;i++) {
+            tmp->restaPecados[i] = tmp->pecados[i]- tmp->buenasAcciones[i];
+            tmp->restaBuenasAcciones[i] = tmp->buenasAcciones[i] - tmp->pecados[i];
+        }
+        tmp  = tmp->next;
+    }
+}
+
+QString funcionesArchivos::obtenerFechaHoraActual(){
+    /*
+     *
+     */
+    QString fechaHoraExacta = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss ap");
+    return fechaHoraExacta;
+
+}
+
+QString funcionesArchivos::obtenerFechaActual(){
+    /*
+     *
+     */
+    QString fechaHoraExacta = QDateTime::currentDateTime().toString("yyyy-MM-dd");
+    return fechaHoraExacta;
 
 }
