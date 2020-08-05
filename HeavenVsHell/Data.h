@@ -16,6 +16,8 @@ struct Data{
     QList<Lugar*> paises;
 
     QString nombreDemonios[7] = {"Asmodeo", "Belfegor", "Mammón", "Abadón", "Satán", "Belcebú", "Lucifer"};
+    QString nombrePecados[7] = {"Lujuria","Gula","Avaricia","Pereza","Ira","Envidia","Soberbia"};
+    QString nombreBuenasAcciones[7] = {"Castidad","Ayuno","Donación","Diligencia","Calma","Solidaridad","Humildad"};
     QHash <int, QList<Persona*>> demonios;
 
 

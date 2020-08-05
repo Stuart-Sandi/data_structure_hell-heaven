@@ -4,6 +4,7 @@
 #include <QList>
 #include <Persona.h>
 #include "ListaDoble_Personas.h"
+#include <QMessageBox>
 
 class funcionesArchivos
 {
@@ -17,7 +18,6 @@ public:
     QString obtenerFechaHoraActual();
     QString obtenerFechaActual();
     QList<Persona*> listaOrdenada(QList<Persona*>);
-
 
 };
 

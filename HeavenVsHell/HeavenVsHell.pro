@@ -20,7 +20,6 @@ SOURCES += \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
     Lugar.cpp \
-    SMTP.cpp \
     Ventana_Arbol.cpp \
     Ventana_Arbol_Leaves.cpp \
     Ventana_Condenacion.cpp \
@@ -29,7 +28,8 @@ SOURCES += \
     Ventana_SumarAcciones.cpp \
     funcionesArchivos.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    smtp.cpp
 
 HEADERS += \
     Arbol_BB.h \
@@ -39,7 +39,6 @@ HEADERS += \
     Lugar.h \
     Nodo_Arbol.h \
     Persona.h \
-    SMTP.h \
     Ventana_Arbol.h \
     Ventana_Arbol_Leaves.h \
     Ventana_Condenacion.h \
@@ -47,7 +46,8 @@ HEADERS += \
     Ventana_Creacion.h \
     Ventana_SumarAcciones.h \
     funcionesArchivos.h \
-    mainwindow.h
+    mainwindow.h \
+    smtp.h
 
 FORMS += \
     Ventana_Arbol.ui \

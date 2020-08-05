@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <funcionesArchivos.h>
 #include <Data.h>
+#include <smtp.h>
 
 namespace Ui {
 class Ventana_Condenacion;
@@ -23,14 +24,20 @@ public:
     QList <Persona*> ordenarListaRestaPecados(int,QList<Persona*>);
     QList <Persona*> ordenarListaPecados(int,QList<Persona*>);
     void actualizarDemonio(int);
+    void log();
     QString datosPersona(Persona*,int);
 
 private slots:
+    void sendMail(QString);
+    void mailSent(QString);
+
     void on_comboBox_activated(int index);
 
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::Ventana_Condenacion *ui;

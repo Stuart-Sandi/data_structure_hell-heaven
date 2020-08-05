@@ -190,11 +190,6 @@ void Ventana_Condenacion::calcularDatos(QList<Persona*> listaDemonio){
 QString Ventana_Condenacion::datosPersona(Persona * humano, int cont){
     int demonio = this->ui->comboBox->currentIndex();
     QString mensaje;
-//    QString log;
-//    log += this->fA->obtenerFechaHoraActual()+"\n";
-//    log += "Humano "+QString::number(cont)+tmp->nombre+" "+tmp->apellido+" "+tmp->pais+"\n";
-//    log += "Murió el "+this->fA->obtenerFechaActual()+" condenado por "+QString::number(tmp->pecados[demonio])+" pecados de";
-
 
     mensaje += "***********************************************************\n";
     mensaje += "Id: "+QString::number(humano->id)+'\n';
@@ -270,7 +265,83 @@ QList<Persona*> Ventana_Condenacion::ordenarListaPecados(int pecado, QList<Perso
     return tmp;
 }
 
+void Ventana_Condenacion::log(){
+    QString log = "";
+
+    for (int i = 0; i<7; i++) {
+        QList <Persona*> tmp = this->datos->demonios.value(i);
+
+        if (tmp.size() != 0){
+            log += "**********************************************************************************************************\n";
+            log += "Demonio: "+this->datos->nombreDemonios[i]+"\n\n";
+            int cont = 1;
+
+            for (int j = 0;j<tmp.size();j++) {
+                Persona * p = tmp[j];
+                log += this->fA->obtenerFechaHoraActual()+"\t";
+                log += "Humano "+QString::number(cont)+"  "+p->nombre+" "+p->apellido+" "+p->pais+"\n";
+                log += "Murió el "+this->fA->obtenerFechaActual()+" condenado por "+QString::number(p->pecados[i])+" pecados de "+this->datos->nombrePecados[i]+" y "
+                +QString::number(p->buenasAcciones[i])+" acciones de "+this->datos->nombreBuenasAcciones[i]+" por el demonio "+this->datos->nombreDemonios[i]+"\n\n";
+                cont++;
+            }
+        }
+
+    }
+
+    if (log != ""){
+        //CREA EL FORMATO DEL NOMBRE DEL ARCHIVO
+        int dia = QDate::currentDate().day();
+        int anno = QDate::currentDate().year();
+        int mes = QDate::currentDate().month();
+        int hora = QTime::currentTime().hour();
+        int segundo = QTime::currentTime().second();
+        int min = QTime::currentTime().minute();
+        QString mensaje = QString::number(anno)+QString::number(mes)+QString::number(dia)+"_"+QString::number(hora)+QString::number(min)+QString::number(segundo);
+        qDebug()<<mensaje;
+
+        //ESTE ES EL METODO PARA CREAR LOS ARCHIVOS
+        QString nombreArchivo = "../HeavenVsHell/Archivos_Condenacion/"+mensaje+".txt";
+
+        QFile archivo(nombreArchivo);
+
+        if(archivo.open(QIODevice::WriteOnly | QIODevice::Text)){
+            QTextStream datosArchivo(&archivo);
+            datosArchivo << log <<"\n";
+
+        }
+        archivo.close();
+        sendMail(nombreArchivo);
+        mailSent("Message sent");
+
+    }else{
+        QMessageBox msgBox;
+        msgBox.setText("Debe condenar con algun demonio.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
+    }
+
+}
+
 void Ventana_Condenacion::on_pushButton_2_clicked()
 {
     this->setVisible(false);
+}
+
+void Ventana_Condenacion::sendMail(QString x)
+{
+    Smtp* smtp = new Smtp("prograhellvsheaven@gmail.com", "progra123", "smtp.gmail.com", 465);
+    smtp->sendMail("prograhellvsheaven@gmail.com", "stuartsandi43@gmail.com" , "Reporte total de Condenaciones","Este es el reporte de todas las muertes causadas por los demonios del infierno", x );
+
+}
+
+void Ventana_Condenacion::mailSent(QString status)
+{
+    if(status == "Message sent")
+        QMessageBox::warning( 0, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
+}
+
+void Ventana_Condenacion::on_pushButton_3_clicked()
+{
+    this->log();
 }
