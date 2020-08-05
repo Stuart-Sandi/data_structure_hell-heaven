@@ -111,9 +111,10 @@ QString Ventana_Condenacion::condenar(){
     QString data = "";
     int demonio = this->ui->comboBox->currentIndex();
     QList <Persona*> listaTmp = this->datos->lPersonas->listaTMP;
-    listaTmp = ordenarListaPecados(demonio,listaTmp);
+    listaTmp = this->ordenarListaRestaPecados(demonio,listaTmp);
 
     int tama = listaTmp.size()* 0.05;
+    qDebug()<<tama;
     int contador = 0;
     int index = 0;
 
@@ -126,7 +127,7 @@ QString Ventana_Condenacion::condenar(){
                 this->datos->infierno.append(listaTmp[index]);
                 QList <Persona*> listaDemonio = this->datos->demonios.value(demonio);
                 listaDemonio.append(listaTmp[index]);
-                listaDemonio = ordenarListaPecados(demonio,listaDemonio);
+                listaDemonio = this->ordenarListaPecados(demonio,listaDemonio);
                 this->datos->demonios.insert(demonio,listaDemonio);
                 contador++;
             }
@@ -195,8 +196,8 @@ QString Ventana_Condenacion::datosPersona(Persona * humano, int cont){
     mensaje += "País: "+humano->pais+'\n';
     mensaje += "Creencia: "+humano->creencia+'\n';
     mensaje += "Ocupacion: "+humano->profesion+'\n';
-    mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n\n";
-    mensaje += "Condenado por: "+this->datos->nombreDemonios[demonio];
+    mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n";
+    mensaje += "Condenado por: "+this->datos->nombreDemonios[demonio]+"\n\n";
 
     mensaje += "[Lujuria: "+QString::number(humano->pecados[0])+", ";
     mensaje += "Gula: "+QString::number(humano->pecados[1])+", ";
@@ -228,7 +229,7 @@ QString Ventana_Condenacion::datosPersona(Persona * humano, int cont){
     return mensaje;
 }
 
-QList<Persona*> Ventana_Condenacion::ordenarListaPecados(int pecado, QList<Persona *> tmp){
+QList<Persona*> Ventana_Condenacion::ordenarListaRestaPecados(int pecado, QList<Persona *> tmp){
     /*
      *
      */
@@ -237,6 +238,23 @@ QList<Persona*> Ventana_Condenacion::ordenarListaPecados(int pecado, QList<Perso
         int min = i;
         for (int j = i+1; j<x; j++){
             if(tmp[j]->restaPecados[pecado]>tmp[min]->restaPecados[pecado]){
+                min = j;
+            }
+        }
+        tmp.swapItemsAt(min, i);
+    }
+    return tmp;
+}
+
+QList<Persona*> Ventana_Condenacion::ordenarListaPecados(int pecado, QList<Persona *> tmp){
+    /*
+     *
+     */
+    int x = tmp.size();
+    for (int i = 0; i<x; i++){
+        int min = i;
+        for (int j = i+1; j<x; j++){
+            if(tmp[j]->pecados[pecado]>tmp[min]->pecados[pecado]){
                 min = j;
             }
         }

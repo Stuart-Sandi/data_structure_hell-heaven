@@ -20,6 +20,7 @@ public:
     ~Ventana_Condenacion();  
     QString condenar();
     void calcularDatos(QList<Persona*>);
+    QList <Persona*> ordenarListaRestaPecados(int,QList<Persona*>);
     QList <Persona*> ordenarListaPecados(int,QList<Persona*>);
     void actualizarDemonio(int);
     QString datosPersona(Persona*,int);
