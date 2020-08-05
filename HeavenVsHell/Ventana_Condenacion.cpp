@@ -106,9 +106,8 @@ void Ventana_Condenacion::on_pushButton_clicked()
     this->condenar();
 }
 
-QString Ventana_Condenacion::condenar(){
+void Ventana_Condenacion::condenar(){
 
-    QString data = "";
     int demonio = this->ui->comboBox->currentIndex();
     QList <Persona*> listaTmp = this->datos->lPersonas->listaTMP;
     listaTmp = this->ordenarListaRestaPecados(demonio,listaTmp);
@@ -118,18 +117,20 @@ QString Ventana_Condenacion::condenar(){
     int contador = 0;
     int index = 0;
 
+    QList <Persona*> listaDemonio = this->datos->demonios.value(demonio);
+
     while (contador < tama){
 
-        if (index < tama){
+        if (index < listaTmp.size()){
+
             if (listaTmp[index]->inHell == false && listaTmp[index]->inHeaven == false){
+
                 listaTmp[index]->inHell = true;
                 listaTmp[index]->inWorld = false;
                 this->datos->infierno.append(listaTmp[index]);
-                QList <Persona*> listaDemonio = this->datos->demonios.value(demonio);
                 listaDemonio.append(listaTmp[index]);
-                listaDemonio = this->ordenarListaPecados(demonio,listaDemonio);
-                this->datos->demonios.insert(demonio,listaDemonio);
                 contador++;
+
             }
             index++;
 
@@ -138,11 +139,11 @@ QString Ventana_Condenacion::condenar(){
         }
 
     }
-    this->actualizarDemonio(demonio);
-    QList <Persona*> listaDemonio = this->datos->demonios.value(demonio);
-    this->calcularDatos(listaDemonio);
 
-    return data;
+    listaDemonio = ordenarListaPecados(demonio,listaDemonio);
+    this->actualizarDemonio(demonio);
+    this->calcularDatos(listaDemonio);
+    this->datos->demonios.insert(demonio,listaDemonio);
 }
 
 void Ventana_Condenacion::calcularDatos(QList<Persona*> listaDemonio){
@@ -176,6 +177,12 @@ void Ventana_Condenacion::calcularDatos(QList<Persona*> listaDemonio){
         this->ui->label_max->setText("MÁXIMO: "+QString::number(maximo));
         this->ui->label_min->setText("MÍNIMO: "+QString::number(minimo));
         this->ui->textBrowser->setText(mensaje);
+    }else{
+        this->ui->label_total->setText("TOTAL CONDENADOS: ");
+        this->ui->label_promedio->setText("PROMEDIO: ");
+        this->ui->label_max->setText("MÁXIMO: ");
+        this->ui->label_min->setText("MÍNIMO: ");
+        this->ui->textBrowser->setText("");
     }
 
 }

@@ -18,7 +18,7 @@ public:
     Data * datos;
     explicit Ventana_Condenacion(QWidget *parent = nullptr, Data * pDatos = nullptr);
     ~Ventana_Condenacion();  
-    QString condenar();
+    void condenar();
     void calcularDatos(QList<Persona*>);
     QList <Persona*> ordenarListaRestaPecados(int,QList<Persona*>);
     QList <Persona*> ordenarListaPecados(int,QList<Persona*>);

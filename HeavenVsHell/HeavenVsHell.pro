@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,6 +20,7 @@ SOURCES += \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
     Lugar.cpp \
+    SMTP.cpp \
     Ventana_Arbol.cpp \
     Ventana_Arbol_Leaves.cpp \
     Ventana_Condenacion.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     Lugar.h \
     Nodo_Arbol.h \
     Persona.h \
+    SMTP.h \
     Ventana_Arbol.h \
     Ventana_Arbol_Leaves.h \
     Ventana_Condenacion.h \
