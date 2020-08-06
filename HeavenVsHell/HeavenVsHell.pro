@@ -16,13 +16,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Angel.cpp \
     ArbolTriArio.cpp \
     Arbol_BB.cpp \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
     Lugar.cpp \
-    NodoTriArio.cpp \
     Ventana_Arbol.cpp \
     Ventana_Arbol_Leaves.cpp \
     Ventana_Condenacion.cpp \

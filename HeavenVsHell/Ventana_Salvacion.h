@@ -16,6 +16,13 @@ public:
     Data * datos;
     explicit Ventana_Salvacion(QWidget *parent = nullptr, Data * pDatos = nullptr);
     ~Ventana_Salvacion();
+    void insertarEnArbolTriArio(NodoTriArio*);
+    QList <Persona*> ordenarInfierno(QList<Persona*>);
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Ventana_Salvacion *ui;

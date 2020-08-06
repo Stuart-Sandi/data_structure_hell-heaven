@@ -3,24 +3,24 @@
 
 
 #include <QString>
-#include <Persona.h>
-
 
 class Angel
 {
 public:
 
     QString nombre;
-    QString version;
-    int generacion;
-    Persona * humano;
-    Angel();
-    Angel(QString pNombre, QString pVersion, QString, int pGeneracion){
+    int version;
+    QString generacion;
+    Angel(){
+        this->nombre = "";
+        this->version = 0;
+        this->generacion = "";
+    };
+    Angel(QString pNombre, int pVersion, QString pGeneracion){
 
         this->nombre = pNombre;
         this->version = pVersion;
         this->generacion = pGeneracion;
-        this->humano = NULL;
 
     }
 

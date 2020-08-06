@@ -2,21 +2,29 @@
 #define ARBOLTRIARIO_H
 
 #include <NodoTriArio.h>
+#include <funcionesArchivos.h>
+#include <QtMath>
 
 class ArbolTriArio
 {
 public:
 
-    NodoTriArio raiz;
+    int nivelActual;
+    int version;
 
-    ArbolTriArio();
+    QString nombreAngeles[10] = {"Miguel",  "Nuriel",  "Aniel",  "Rafael",  "Gabriel", "Shamsiel",  "Raguel",  "Uriel",  "Azrael",  "Sariel"};
+    NodoTriArio * raiz;
+    funcionesArchivos * fA;
 
-    ArbolTriArio(NodoTriArio pRaiz){
-
-        this->raiz = pRaiz;
-
-    }
-
+    ArbolTriArio(){
+        this->version = 1;
+        this->nivelActual = 2;
+        this->fA = new funcionesArchivos();
+        this->raiz = NULL;
+        this->insertarEnArbolTriArioPrede();
+    };
+    void insertarEnArbolTriArioPrede();
+    void insertarEnArbolTriArio(NodoTriArio*);
 
 };
 

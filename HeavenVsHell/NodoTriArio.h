@@ -2,27 +2,21 @@
 #define NODOTRIARIO_H
 
 #include <Angel.h>
+#include <Persona.h>
 
 class NodoTriArio
 {
 public:
 
     Angel * angel; //Informacion del Nodo
+    Persona * persona; // Informacion de la persona
 
-    NodoTriArio * hijo_izq; //Puntero a un nodoPersona
-    NodoTriArio * hijo_centro;   //Puntero a un nodoPersona
-    NodoTriArio * hijo_der;   //Puntero a un nodoPersona
+    QList<NodoTriArio*> hijos;
+    NodoTriArio(Angel* angel){
 
-    NodoTriArio(){
-
-        this->angel = NULL;
-        this->hijo_izq = NULL;
-        this->hijo_centro = NULL;
-        this->hijo_der = NULL;
-
+        this->angel = angel;
+        this->persona = NULL;
     }
-
-    void insertar(Angel*);
 
 };
 

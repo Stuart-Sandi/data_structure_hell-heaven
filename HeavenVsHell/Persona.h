@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QList>
+#include <Angel.h>
 
 class Persona
 {
@@ -10,8 +11,9 @@ public:
 
     //ENTEROS
     long int id;
-    long int totalPecados;
+    long int totalPecados; 
     long int totalBuenasAcciones;
+    long int restaAccionesPecados;
 
     //STRINGS
     QString nombre;
@@ -22,7 +24,6 @@ public:
     QString correo;
     QString fechaHoraNacimiento;
     QString continente;
-    QString angel;
 
     //LISTAS
     int pecados[7] = {0,0,0,0,0,0,0};
@@ -42,6 +43,7 @@ public:
     Persona * padre;
     Persona * next;
     Persona * before;
+    Angel * angel;
 
 
 
@@ -50,6 +52,7 @@ public:
         this->id = 0;
         this->totalPecados = 0;
         this->totalBuenasAcciones = 0;
+        this->restaAccionesPecados = 0;
 
         //STRINGS
         this->nombre = "";
@@ -60,7 +63,6 @@ public:
         this->correo = "";
         this->fechaHoraNacimiento = "";
         this->continente = "";
-        this->angel = "";
 
         //BOOLEANOS
         this->isPadre = false;
@@ -73,6 +75,7 @@ public:
         this->padre = NULL;
         this->next = NULL;
         this->before = NULL;
+        this->angel = NULL;
     };
 
     Persona(long int pId, QString pNombre, QString pApellido, QString pPais, QString pCreencia, QString pProfesion, QString pCorreo, QString pFechaNacimiento, QString pContinente){
@@ -81,6 +84,7 @@ public:
         this->id = pId;
         this->totalPecados = 0;
         this->totalBuenasAcciones = 0;
+        this->restaAccionesPecados = 0;
 
         //STRINGS
         this->nombre = pNombre;
@@ -103,6 +107,7 @@ public:
         this->padre = NULL;
         this->next = NULL;
         this->before = NULL;
+        this->angel = NULL;
     }
 
 };

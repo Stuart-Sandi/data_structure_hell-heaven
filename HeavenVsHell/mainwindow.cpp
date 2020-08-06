@@ -88,7 +88,7 @@ void MainWindow::on_pushButton_4_clicked()
 void MainWindow::on_pushButton_5_clicked()
 {
 
-//    if (this->datos->arbol->raiz != nullptr){
+    //if (!this->datos->infierno.isEmpty()){
         this->vSalvacion->setVisible(true);
 //    } else {
 //        QMessageBox msgBox;
