@@ -155,7 +155,6 @@ void Ventana_Condenacion::calcularDatos(QList<Persona*> listaDemonio){
         int minimo = listaDemonio[0]->pecados[demonio];
         int cantHumanos = listaDemonio.size();
         QString mensaje = "";
-        int contador = 1;
 
         for (Persona * p : listaDemonio) {
             promedio += p->pecados[demonio];

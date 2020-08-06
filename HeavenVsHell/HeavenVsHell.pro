@@ -28,6 +28,7 @@ SOURCES += \
     Ventana_Condenacion.cpp \
     Ventana_Consultas_Acciones.cpp \
     Ventana_Creacion.cpp \
+    Ventana_Salvacion.cpp \
     Ventana_SumarAcciones.cpp \
     funcionesArchivos.cpp \
     main.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     Ventana_Condenacion.h \
     Ventana_Consultas_Acciones.h \
     Ventana_Creacion.h \
+    Ventana_Salvacion.h \
     Ventana_SumarAcciones.h \
     funcionesArchivos.h \
     mainwindow.h \
@@ -61,6 +63,7 @@ FORMS += \
     Ventana_Condenacion.ui \
     Ventana_Consultas_Acciones.ui \
     Ventana_Creacion.ui \
+    Ventana_Salvacion.ui \
     Ventana_SumarAcciones.ui \
     mainwindow.ui
 
