@@ -1,6 +1,5 @@
 #include "NodoTriArio.h"
 
-NodoTriArio::NodoTriArio()
-{
+void NodoTriArio::insertar(Angel * pAngel){
 
 }
