@@ -7,6 +7,7 @@
 #include <Ventana_SumarAcciones.h>
 #include <Ventana_Condenacion.h>
 #include <Ventana_Salvacion.h>
+#include <Ventana_Consultas_HellvsHeaven.h>
 #include <Data.h>
 #include <QDebug>
 
@@ -25,6 +26,7 @@ public:
     Ventana_SumarAcciones * vAcciones;
     Ventana_Condenacion * vCondenacion;
     Ventana_Salvacion * vSalvacion;
+    Ventana_Consultas_HellvsHeaven * vConsultasHVSH;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -38,6 +40,8 @@ private slots:
     void on_pushButton_4_clicked();
 
     void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::MainWindow *ui;

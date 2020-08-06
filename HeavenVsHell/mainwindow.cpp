@@ -15,22 +15,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->datos = new Data();
 
-//    for (int i = 0; i<1000; i++) {
-//        QList<Persona*> tmp;
-//        this->datos->cielo.insert(i, tmp);
-//    }
-//    int id = 9999849;
-
-
-//    int posicion = id%1000;
-//    qDebug()<<posicion;
-
     //REFERENCIAS DE VENTANAS
     this->vCreacion = new Ventana_Creacion(0, this->datos);
     this->vArbol = new Ventana_Arbol(0, this->datos);
     this->vAcciones = new Ventana_SumarAcciones(0, this->datos);
     this->vCondenacion = new Ventana_Condenacion(0, this->datos);
     this->vSalvacion = new Ventana_Salvacion(0, this->datos);
+    this->vConsultasHVSH = new Ventana_Consultas_HellvsHeaven();
 
 }
 
@@ -97,4 +88,9 @@ void MainWindow::on_pushButton_5_clicked()
         msgBox.setIcon(msgBox.Critical);
         msgBox.exec();
     }
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    this->vConsultasHVSH->setVisible(true);
 }

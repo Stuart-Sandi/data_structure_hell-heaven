@@ -25,6 +25,7 @@ SOURCES += \
     Ventana_Arbol_Leaves.cpp \
     Ventana_Condenacion.cpp \
     Ventana_Consultas_Acciones.cpp \
+    Ventana_Consultas_HellvsHeaven.cpp \
     Ventana_Creacion.cpp \
     Ventana_Salvacion.cpp \
     Ventana_SumarAcciones.cpp \
@@ -48,6 +49,7 @@ HEADERS += \
     Ventana_Arbol_Leaves.h \
     Ventana_Condenacion.h \
     Ventana_Consultas_Acciones.h \
+    Ventana_Consultas_HellvsHeaven.h \
     Ventana_Creacion.h \
     Ventana_Salvacion.h \
     Ventana_SumarAcciones.h \
@@ -60,6 +62,7 @@ FORMS += \
     Ventana_Arbol_Leaves.ui \
     Ventana_Condenacion.ui \
     Ventana_Consultas_Acciones.ui \
+    Ventana_Consultas_HellvsHeaven.ui \
     Ventana_Creacion.ui \
     Ventana_Salvacion.ui \
     Ventana_SumarAcciones.ui \
