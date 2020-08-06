@@ -280,7 +280,7 @@ void Ventana_Condenacion::log(){
                 log += this->fA->obtenerFechaHoraActual()+"\t";
                 log += "Humano "+QString::number(cont)+"  "+p->nombre+" "+p->apellido+" "+p->pais+"\n";
                 log += "Murió el "+this->fA->obtenerFechaActual()+" condenado por "+QString::number(p->pecados[i])+" pecados de "+this->datos->nombrePecados[i]+" y "
-                +QString::number(p->buenasAcciones[i])+" acciones de "+this->datos->nombreBuenasAcciones[i]+" por el demonio "+this->datos->nombreDemonios[i]+"\n\n";
+                +QString::number(p->buenasAcciones[i])+" acciones de "+this->datos->nombreBuenasAcciones[i]+" por el demonio "+this->datos->nombreDemonios[i]+".\n\n";
                 cont++;
             }
         }
@@ -330,7 +330,7 @@ void Ventana_Condenacion::on_pushButton_2_clicked()
 void Ventana_Condenacion::sendMail(QString x)
 {
     Smtp* smtp = new Smtp("prograhellvsheaven@gmail.com", "progra123", "smtp.gmail.com", 465);
-    smtp->sendMail("prograhellvsheaven@gmail.com", "stuartsandi43@gmail.com" , "Reporte total de Condenaciones","Este es el reporte de todas las muertes causadas por los demonios del infierno", x );
+    smtp->sendMail("prograhellvsheaven@gmail.com", "stuartsandi43@gmail.com" , "Reporte total de Condenaciones","Este es el reporte de todas las muertes causadas por los demonios del infierno.", x );
 
 }
 

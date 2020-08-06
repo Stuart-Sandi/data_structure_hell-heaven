@@ -81,9 +81,9 @@ font: italic 20pt &quot;Times New Roman&quot;;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>120</y>
+      <y>110</y>
       <width>701</width>
-      <height>341</height>
+      <height>351</height>
      </rect>
     </property>
    </widget>
@@ -102,6 +102,77 @@ font: italic 20pt &quot;Times New Roman&quot;;</string>
     </property>
     <property name="text">
      <string>VOLVER</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>60</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(188, 88, 5);
+font: italic 20pt &quot;Times New Roman&quot;;</string>
+    </property>
+    <property name="text">
+     <string>LOG</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_total">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>60</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 14pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <property name="text">
+     <string>SALVADOS: 0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_total_2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>60</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 14pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <property name="text">
+     <string>GEN ACTUAL: 1</string>
     </property>
    </widget>
   </widget>

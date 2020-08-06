@@ -88,13 +88,13 @@ void MainWindow::on_pushButton_4_clicked()
 void MainWindow::on_pushButton_5_clicked()
 {
 
-    //if (!this->datos->infierno.isEmpty()){
+    if (!this->datos->infierno.isEmpty()){
         this->vSalvacion->setVisible(true);
-//    } else {
-//        QMessageBox msgBox;
-//        msgBox.setText("Debe crear el mundo primero.");
-//        msgBox.setWindowTitle("Error");
-//        msgBox.setIcon(msgBox.Critical);
-//        msgBox.exec();
-//    }
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Debe condenar humanos primero.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
+    }
 }

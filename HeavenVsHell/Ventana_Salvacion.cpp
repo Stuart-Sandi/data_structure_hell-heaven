@@ -55,7 +55,7 @@ void Ventana_Salvacion::insertarEnArbolTriArio(NodoTriArio * tmp){
             Angel * a = new Angel();
             a->nombre = this->datos->nombreAngeles[random];
             a->version = this->datos->arbolTriArio->version;
-            a->generacion = "G"+QString::number(this->datos->arbolTriArio->nivelActual);
+            a->generacion = "Generación "+QString::number(this->datos->arbolTriArio->nivelActual);
             NodoTriArio * nodo = new NodoTriArio(a);
 
             Persona * p = this->datos->infierno[0];
@@ -88,6 +88,7 @@ void Ventana_Salvacion::on_pushButton_clicked()
         this->datos->infierno = this->ordenarInfierno(this->datos->infierno);
         this->insertarEnArbolTriArio(this->datos->arbolTriArio->raiz);
         this->datos->arbolTriArio->nivelActual++;
+        this->mostrarCielo();
     }else{
         QMessageBox msgBox;
         msgBox.setText("No hay suficientes condenados en el infierno para salvar con la siguiente generación de ángeles.");
@@ -97,7 +98,126 @@ void Ventana_Salvacion::on_pushButton_clicked()
     }
 }
 
+void Ventana_Salvacion::mostrarCielo(){
+
+    QString mensaje = "";
+    int cont = 0;
+    for (int i = 0;i<1000;i++) {
+
+        QList<Persona*> tmp = this->datos->cielo.value(i);
+        if (!tmp.isEmpty()){
+            cont += tmp.size();
+            for (int w = 0;w<tmp.size();w++) {
+                mensaje += "**************************************************************************************************************\n";
+                mensaje += "Id: "+QString::number(tmp[w]->id)+'\n';
+                mensaje += "Nombre: "+tmp[w]->nombre+'\n';
+                mensaje += "Apellido: "+tmp[w]->apellido+'\n';
+                mensaje += "País: "+tmp[w]->pais+'\n';
+                mensaje += "Creencia: "+tmp[w]->creencia+'\n';
+                mensaje += "Ocupación: "+tmp[w]->profesion+'\n';
+                mensaje += "Fecha nacimiento: "+tmp[w]->fechaHoraNacimiento+"\n";
+                mensaje += "Salvado por el ángel: San "+tmp[w]->angel->nombre+"("+QString::number(tmp[w]->angel->version)+")"+" "+tmp[w]->angel->generacion+"\n\n";
+
+                if (!tmp[w]->listaHijos.isEmpty()){
+                    mensaje += "\tHijos:\n";
+                    for (int z = 0;z<tmp[w]->listaHijos.size();z++) {
+
+                        if (z != (tmp[w]->listaHijos.size()-1)){
+                            mensaje += "\tId: "+QString::number(tmp[w]->listaHijos[z]->id)+", Nombre: "+tmp[w]->listaHijos[z]->nombre+" "+tmp[w]->listaHijos[z]->apellido+"\n";
+                        }
+                        else{
+                            mensaje += "\tId: "+QString::number(tmp[w]->listaHijos[z]->id)+", Nombre: "+tmp[w]->listaHijos[z]->nombre+" "+tmp[w]->listaHijos[z]->apellido;
+                        }
+
+                    }
+                }
+
+                mensaje += "\n\n";
+            }
+        }
+    }
+    this->ui->textBrowser->setText(mensaje);
+    this->ui->label_total->setText("SALVADOS: "+QString::number(cont));
+    this->ui->label_total_2->setText("GEN ACTUAL: "+QString::number(this->datos->arbolTriArio->nivelActual-1));
+}
+
 void Ventana_Salvacion::on_pushButton_2_clicked()
 {
     this->setVisible(false);
+}
+
+void Ventana_Salvacion::on_pushButton_3_clicked()
+{
+    this->log();
+}
+
+void Ventana_Salvacion::log(){
+    QString log = "";
+    int cont = 1;
+
+    for (int i = 0; i<1000; i++) {
+        QList <Persona*> tmp = this->datos->cielo.value(i);
+
+        if (tmp.size() != 0){
+
+            for (int j = 0;j<tmp.size();j++) {
+                log += "**********************************************************************************************************\n";
+
+                Persona * p = tmp[j];
+                log += this->datos->fA->obtenerFechaHoraActual()+"\t";
+                log += "Humano "+QString::number(cont)+"  "+p->nombre+" "+p->apellido+" "+p->pais+"\n";
+                log += "Salvado/a el "+this->datos->fA->obtenerFechaActual()+" por "+QString::number(p->totalPecados)+" pecados vs "+QString::number(p->totalBuenasAcciones)+
+                " acciones buenas por el ángel San "+tmp[j]->angel->nombre+"("+QString::number(tmp[j]->angel->version)+")"+" "+tmp[j]->angel->generacion+".\n\n";
+                cont++;
+            }
+        }
+
+    }
+
+    if (log != ""){
+        //CREA EL FORMATO DEL NOMBRE DEL ARCHIVO
+        int dia = QDate::currentDate().day();
+        int anno = QDate::currentDate().year();
+        int mes = QDate::currentDate().month();
+        int hora = QTime::currentTime().hour();
+        int segundo = QTime::currentTime().second();
+        int min = QTime::currentTime().minute();
+        QString mensaje = QString::number(anno)+QString::number(mes)+QString::number(dia)+"_"+QString::number(hora)+QString::number(min)+QString::number(segundo);
+        qDebug()<<mensaje;
+
+        //ESTE ES EL METODO PARA CREAR LOS ARCHIVOS
+        QString nombreArchivo = "../HeavenVsHell/Archivos_Salvacion/"+mensaje+".txt";
+
+        QFile archivo(nombreArchivo);
+
+        if(archivo.open(QIODevice::WriteOnly | QIODevice::Text)){
+            QTextStream datosArchivo(&archivo);
+            datosArchivo << log <<"\n";
+
+        }
+        archivo.close();
+        sendMail(nombreArchivo);
+        mailSent("Message sent");
+
+    }else{
+        QMessageBox msgBox;
+        msgBox.setText("Debe condenar con algun demonio.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
+    }
+
+}
+
+void Ventana_Salvacion::sendMail(QString x)
+{
+    Smtp* smtp = new Smtp("prograhellvsheaven@gmail.com", "progra123", "smtp.gmail.com", 465);
+    smtp->sendMail("prograhellvsheaven@gmail.com", "stuartsandi43@gmail.com" , "Reporte total de Salvaciones","Este es el reporte de todas las personas salvadas por los ángeles del cielo.", x );
+
+}
+
+void Ventana_Salvacion::mailSent(QString status)
+{
+    if(status == "Message sent")
+        QMessageBox::warning( 0, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
 }
