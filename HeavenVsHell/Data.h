@@ -23,7 +23,7 @@ struct Data{
 
 
     QList<Persona*> infierno;
-    //QHash <int, QList<Persona*>> cielo;
+    QHash <int, QList<Persona*>> cielo;
 
 
     Data(){
