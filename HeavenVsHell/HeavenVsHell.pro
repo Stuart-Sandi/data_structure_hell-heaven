@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Angel.cpp \
+    ArbolTriArio.cpp \
     Arbol_BB.cpp \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
     Lugar.cpp \
+    NodoTriArio.cpp \
     Ventana_Arbol.cpp \
     Ventana_Arbol_Leaves.cpp \
     Ventana_Condenacion.cpp \
@@ -34,11 +36,13 @@ SOURCES += \
 
 HEADERS += \
     Angel.h \
+    ArbolTriArio.h \
     Arbol_BB.h \
     Data.h \
     ListaDoble_Personas.h \
     Listas_Cargadas.h \
     Lugar.h \
+    NodoTriArio.h \
     Nodo_Arbol.h \
     Persona.h \
     Ventana_Arbol.h \
