@@ -42,7 +42,7 @@ void Ventana_Creacion::on_pushButton_clicked()
             QMessageBox msgBox;
             msgBox.setText(QString::number(x)+" humanos han sido generados.");
             msgBox.setIcon(msgBox.Information);
-            msgBox.setWindowTitle("Information");
+            msgBox.setWindowTitle("Información");
             msgBox.exec();
 
 //            Persona * tmp = this->datos->lPersonas->primerNodo;

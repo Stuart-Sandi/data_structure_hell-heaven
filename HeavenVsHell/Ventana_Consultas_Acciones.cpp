@@ -26,12 +26,12 @@ void Ventana_Consultas_Acciones::on_comboBox_activated(int index)
 {
     if (index == 0){
         this->ui->label_4->setText("ESTADO DE PECADOS DE UNA FAMILIA");
-        this->ui->textBrowser->setText("TOP 10 PAISES MAS PECADORES:\n");
-        this->ui->textBrowser_2->setText("TOP 5 PAISES MENOS PECADORES:\n");
+        this->ui->textBrowser->setText("TOP 10 PAÍSES MÁS PECADORES:\n");
+        this->ui->textBrowser_2->setText("TOP 5 PAÍSES MENOS PECADORES:\n");
     }else{
         this->ui->label_4->setText("ESTADO DE BUENAS ACCIONES DE UNA FAMILIA:");
-        this->ui->textBrowser->setText("TOP 10 PAISES CON MAS BUENAS ACCIONES:\n");
-        this->ui->textBrowser_2->setText("TOP 5 PAISES CON MENOS BUENAS ACCIONES:\n");
+        this->ui->textBrowser->setText("TOP 10 PAÍSES CON MÁS BUENAS ACCIONES:\n");
+        this->ui->textBrowser_2->setText("TOP 5 PAÍSES CON MENOS BUENAS ACCIONES:\n");
     }
 }
 
@@ -54,7 +54,7 @@ void Ventana_Consultas_Acciones::on_pushButton_4_clicked()
             while (tmp != NULL){
                 if (tmp->id == id){
                     validar = 1;
-                    this->mensaje += "INFORMACION FAMILIA "+tmp->nombre+" "+tmp->apellido+"\n\n";
+                    this->mensaje += "INFORMACIÓN FAMILIA "+tmp->nombre+" "+tmp->apellido+"\n\n";
                     crearMensajeFamilias(tmp);
                     break;
                 }
@@ -62,7 +62,7 @@ void Ventana_Consultas_Acciones::on_pushButton_4_clicked()
             }
 
             if (validar == 0){
-                msgBox.setText("No se encontro el ID solicitado");
+                msgBox.setText("No se encontro el ID solicitado.");
                 msgBox.setWindowTitle("Error");
                 msgBox.setIcon(msgBox.Critical);
                 msgBox.exec();
@@ -74,7 +74,7 @@ void Ventana_Consultas_Acciones::on_pushButton_4_clicked()
         }
 
     }
-    msgBox.setText("Debe ingresar un ID valido.");
+    msgBox.setText("Debe ingresar un ID válido.");
     msgBox.setWindowTitle("Error");
     msgBox.setIcon(msgBox.Critical);
     msgBox.exec();
@@ -126,8 +126,8 @@ void Ventana_Consultas_Acciones::on_pushButton_5_clicked()
 {
     //LIMPIA LOS DATOS DE LA PANTALLA
     this->ui->label_4->setText("ESTADO DE PECADOS DE UNA FAMILIA");
-    this->ui->textBrowser->setText("TOP 10 PAISES MAS PECADORES:\n");
-    this->ui->textBrowser_2->setText("TOP 5 PAISES MENOS PECADORES:\n");
+    this->ui->textBrowser->setText("TOP 10 PAÍSES MÁS PECADORES:\n");
+    this->ui->textBrowser_2->setText("TOP 5 PAÍSES MENOS PECADORES:\n");
     this->ui->comboBox->setCurrentIndex(0);
     this->ui->lineEdit->setText("");
     this->ui->textBrowser_3->setText("");
@@ -220,11 +220,11 @@ void Ventana_Consultas_Acciones::mostrarDatosPaises(){
 
     QString mensaje = "";
     if (this->ui->comboBox->currentIndex() == 0){
-        this->ui->textBrowser->setText("TOP 10 PAISES MAS PECADORES:\n");
-        this->ui->textBrowser_2->setText("TOP 5 PAISES MENOS PECADORES:\n");
+        this->ui->textBrowser->setText("TOP 10 PAÍSES MÁS PECADORES:\n");
+        this->ui->textBrowser_2->setText("TOP 5 PAÍSES MENOS PECADORES:\n");
     }else{
-        this->ui->textBrowser->setText("TOP 10 PAISES CON MAS BUENAS ACCIONES:\n");
-        this->ui->textBrowser_2->setText("TOP 5 PAISES CON MENOS BUENAS ACCIONES:\n");
+        this->ui->textBrowser->setText("TOP 10 PAÍSES CON MÁS BUENAS ACCIONES:\n");
+        this->ui->textBrowser_2->setText("TOP 5 PAÍSES CON MENOS BUENAS ACCIONES:\n");
     }
     int contador = 1;
 

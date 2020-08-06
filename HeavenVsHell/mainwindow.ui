@@ -97,7 +97,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>ARBOL</string>
+     <string>ÁRBOL</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -131,7 +131,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>CONDENACION</string>
+     <string>CONDENACIÓN</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
@@ -148,7 +148,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>SALVACION</string>
+     <string>SALVACIÓN</string>
     </property>
    </widget>
   </widget>

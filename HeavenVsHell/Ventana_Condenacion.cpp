@@ -196,7 +196,7 @@ QString Ventana_Condenacion::datosPersona(Persona * humano){
     mensaje += "Apellido: "+humano->apellido+'\n';
     mensaje += "País: "+humano->pais+'\n';
     mensaje += "Creencia: "+humano->creencia+'\n';
-    mensaje += "Ocupacion: "+humano->profesion+'\n';
+    mensaje += "Ocupación: "+humano->profesion+'\n';
     mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n";
     mensaje += "Condenado por: "+this->datos->nombreDemonios[demonio]+"\n\n";
 
@@ -337,7 +337,7 @@ void Ventana_Condenacion::sendMail(QString x)
 void Ventana_Condenacion::mailSent(QString status)
 {
     if(status == "Message sent")
-        QMessageBox::warning( 0, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
+        QMessageBox::information(0, tr( "Qt Simple SMTP client" ), tr( "¡Mensaje enviado!\n\n" ) );
 }
 
 void Ventana_Condenacion::on_pushButton_3_clicked()
