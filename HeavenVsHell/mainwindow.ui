@@ -168,6 +168,23 @@ color: rgb(188, 88, 5);</string>
      <string>CONSULTAS HELL VS HEAVEN</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>480</y>
+      <width>691</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 italic 18pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="text">
+     <string>SALIR</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources>

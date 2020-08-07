@@ -19,9 +19,10 @@ struct Data{
     QList<Lugar*> continentes;
     QList<Lugar*> paises;
 
+    QString nombreContinentes[5] = {"África","América","Asia","Europa","Oceanía"};
     QString nombreDemonios[7] = {"Asmodeo", "Belfegor", "Mammón", "Abadón", "Satán", "Belcebú", "Lucifer"};
-    QString nombrePecados[7] = {"Lujuria","Gula","Avaricia","Pereza","Ira","Envidia","Soberbia"};
-    QString nombreBuenasAcciones[7] = {"Castidad","Ayuno","Donación","Diligencia","Calma","Solidaridad","Humildad"};
+    QString nombrePecados[8] = {"Lujuria","Gula","Avaricia","Pereza","Ira","Envidia","Soberbia"};
+    QString nombreBuenasAcciones[8] = {"Castidad","Ayuno","Donación","Diligencia","Calma","Solidaridad","Humildad"};
     QString nombreAngeles[10] = {"Miguel",  "Nuriel",  "Aniel",  "Rafael",  "Gabriel", "Shamsiel",  "Raguel",  "Uriel",  "Azrael",  "Sariel"};
     QHash <int, QList<Persona*>> demonios;
 

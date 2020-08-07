@@ -39,7 +39,7 @@
       <x>20</x>
       <y>20</y>
       <width>471</width>
-      <height>81</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -58,6 +58,823 @@ color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
      <string>CONSULTAS HELL VS HEAVEN</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>351</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 14pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="title">
+     <string>GANADOR</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>331</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: italic 14pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+     </property>
+     <property name="title">
+      <string>  PECADOS       BUENAS ACCIONES</string>
+     </property>
+     <widget class="QLabel" name="lbl_p1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Lujuria: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_bA1">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>30</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Casitidad: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_p2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Gula: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_p3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Avaricia: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_p4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Pereza: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_p5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Ira: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_p6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Envidia: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_p7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Soberbia: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_bA2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>60</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Ayuno: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_bA3">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>90</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Donación: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_bA4">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>120</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Diligencia: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_bA5">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>150</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Calma : 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_bA6">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>180</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Solidaridad: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_bA7">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>210</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Humiladad: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_totalP">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Total: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_totalBA">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>240</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Total: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_netoP">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>270</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Neto: 0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_netoBA">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>270</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Neto: 0</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="lbl_win">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>350</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(12, 72, 109);
+font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="text">
+      <string>GANADOR:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>380</y>
+       <width>201</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>MOSTRAR GANADOR</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>90</y>
+      <width>771</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 14pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="title">
+     <string>CONSULTAS</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>361</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: italic 14pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+     </property>
+     <property name="title">
+      <string>CONSULTAS POR CATEGORIAS</string>
+     </property>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>341</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: italic 9pt &quot;Times New Roman&quot;;
+color: rgb(0, 0, 0);</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>APELLIDOS</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CONTINENTES</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PAÍSES</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CREENCIAS</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PROFESIONES</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="cb_opciones">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>330</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>330</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>BUSCAR</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>30</y>
+       <width>361</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: italic 14pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+     </property>
+     <property name="title">
+      <string>CONSULTAS POR FAMILIA</string>
+     </property>
+     <widget class="QTextBrowser" name="textBrowser_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>341</width>
+        <height>291</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cb_apellidos">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cb_paises">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>330</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>330</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>BUSCAR</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QComboBox" name="comboBox_5">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>40</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>BUENAS ACCIONES</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>PECADOS</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>40</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="text">
+     <string>VER CIELO</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>40</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="text">
+     <string>VER INFIERNO</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>40</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
+color: rgb(188, 88, 5);</string>
+    </property>
+    <property name="text">
+     <string>VOLVER</string>
     </property>
    </widget>
   </widget>

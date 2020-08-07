@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->vAcciones = new Ventana_SumarAcciones(0, this->datos);
     this->vCondenacion = new Ventana_Condenacion(0, this->datos);
     this->vSalvacion = new Ventana_Salvacion(0, this->datos);
-    this->vConsultasHVSH = new Ventana_Consultas_HellvsHeaven();
+    this->vConsultasHVSH = new Ventana_Consultas_HellvsHeaven(0, this->datos);
 
 }
 
@@ -93,4 +93,9 @@ void MainWindow::on_pushButton_5_clicked()
 void MainWindow::on_pushButton_6_clicked()
 {
     this->vConsultasHVSH->setVisible(true);
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    this->close();
 }
