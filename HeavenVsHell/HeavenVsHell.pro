@@ -20,13 +20,13 @@ SOURCES += \
     Arbol_BB.cpp \
     ListaDoble_Personas.cpp \
     Listas_Cargadas.cpp \
-    Lugar.cpp \
     Ventana_Arbol.cpp \
     Ventana_Arbol_Leaves.cpp \
     Ventana_Condenacion.cpp \
     Ventana_Consultas_Acciones.cpp \
     Ventana_Consultas_HellvsHeaven.cpp \
     Ventana_Creacion.cpp \
+    Ventana_MostrarCI.cpp \
     Ventana_Salvacion.cpp \
     Ventana_SumarAcciones.cpp \
     funcionesArchivos.cpp \
@@ -51,6 +51,7 @@ HEADERS += \
     Ventana_Consultas_Acciones.h \
     Ventana_Consultas_HellvsHeaven.h \
     Ventana_Creacion.h \
+    Ventana_MostrarCI.h \
     Ventana_Salvacion.h \
     Ventana_SumarAcciones.h \
     funcionesArchivos.h \
@@ -64,6 +65,7 @@ FORMS += \
     Ventana_Consultas_Acciones.ui \
     Ventana_Consultas_HellvsHeaven.ui \
     Ventana_Creacion.ui \
+    Ventana_MostrarCI.ui \
     Ventana_Salvacion.ui \
     Ventana_SumarAcciones.ui \
     mainwindow.ui

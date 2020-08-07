@@ -115,6 +115,8 @@ void Ventana_Salvacion::mostrarCielo(){
                 mensaje += "País: "+tmp[w]->pais+'\n';
                 mensaje += "Creencia: "+tmp[w]->creencia+'\n';
                 mensaje += "Ocupación: "+tmp[w]->profesion+'\n';
+                mensaje += "Correo: "+tmp[w]->correo+'\n';
+                mensaje += "Continente: "+tmp[w]->continente+'\n';
                 mensaje += "Fecha nacimiento: "+tmp[w]->fechaHoraNacimiento+"\n";
                 mensaje += "Salvado por el ángel: San "+tmp[w]->angel->nombre+"("+QString::number(tmp[w]->angel->version)+")"+" "+tmp[w]->angel->generacion+"\n\n";
 
@@ -183,7 +185,6 @@ void Ventana_Salvacion::log(){
         int segundo = QTime::currentTime().second();
         int min = QTime::currentTime().minute();
         QString mensaje = QString::number(anno)+QString::number(mes)+QString::number(dia)+"_"+QString::number(hora)+QString::number(min)+QString::number(segundo);
-        qDebug()<<mensaje;
 
         //ESTE ES EL METODO PARA CREAR LOS ARCHIVOS
         QString nombreArchivo = "../HeavenVsHell/Archivos_Salvacion/"+mensaje+".txt";

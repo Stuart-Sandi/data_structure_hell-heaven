@@ -85,7 +85,7 @@ void Ventana_Consultas_Acciones::crearMensajeFamilias(Persona * tmp){
     if (!this->lista.contains(tmp)){
 
         this->lista.append(tmp);
-        this->mensaje += "Nombre: "+tmp->nombre+" "+tmp->apellido+" ID: "+QString::number(tmp->id)+'\n';
+        this->mensaje += "Nombre: "+tmp->nombre+" "+tmp->apellido+" ID: "+QString::number(tmp->id)+" País: "+tmp->pais+'\n';
         this->mensaje += "Lista: \n";
 
         if (this->ui->comboBox->currentIndex() == 0){
@@ -254,18 +254,12 @@ void Ventana_Consultas_Acciones::mostrarDatosPaises(){
 
 void Ventana_Consultas_Acciones::on_pushButton_6_clicked()
 {
-        qDebug()<<"tamano paises: "+QString::number(this->datos->paises.size());
         limpiarListas();
         asignarAccionesAListas();
         this->datos->paises = ordenarLista(this->datos->paises);
         this->datos->continentes = ordenarLista(this->datos->continentes);
         mostrarDatosPaises();
         mostrarDatosContinentes();
-
-        for (int i = 0;i<this->datos->continentes.size();i++) {
-            qDebug()<<this->datos->continentes[i]->nombre<<this->datos->continentes[i]->totalPecados;
-            qDebug()<<this->datos->continentes[i]->nombre<<this->datos->continentes[i]->totalBuenasAcciones;
-        }
 
 }
 

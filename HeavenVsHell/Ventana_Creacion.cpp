@@ -45,12 +45,6 @@ void Ventana_Creacion::on_pushButton_clicked()
             msgBox.setWindowTitle("Información");
             msgBox.exec();
 
-//            Persona * tmp = this->datos->lPersonas->primerNodo;
-//            while(tmp != NULL){
-//                qDebug()<<"IDs: "+QString::number(tmp->id);
-//                tmp = tmp->next;
-//            }
-
         }
         else{
             QMessageBox msgBox;

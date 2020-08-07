@@ -323,6 +323,8 @@ void Arbol_BB::inOrderHojas(Nodo_Arbol * nodo){
             this->infoHojas += "País: "+nodo->humano->pais+'\n';
             this->infoHojas += "Creencia: "+nodo->humano->creencia+'\n';
             this->infoHojas += "Ocupacion: "+nodo->humano->profesion+'\n';
+            this->infoHojas += "Correo: "+nodo->humano->correo+'\n';
+            this->infoHojas += "Continente: "+nodo->humano->continente+'\n';
             this->infoHojas += "Fecha nacimiento: "+nodo->humano->fechaHoraNacimiento+"\n\n";
 
             this->infoHojas += "[Lujuria: "+QString::number(nodo->humano->pecados[0])+", ";

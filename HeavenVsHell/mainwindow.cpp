@@ -92,7 +92,22 @@ void MainWindow::on_pushButton_5_clicked()
 
 void MainWindow::on_pushButton_6_clicked()
 {
-    this->vConsultasHVSH->setVisible(true);
+    bool validar = false;
+    for (int i = 0;i<1000;i++) {
+        if (!this->datos->cielo.value(i).isEmpty()){
+            validar = true;
+        }
+    }
+
+    if ((!this->datos->infierno.isEmpty()) && validar){
+        this->vConsultasHVSH->setVisible(true);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Debe condenar y salvar humanos primero.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
+    }
 }
 
 void MainWindow::on_pushButton_7_clicked()

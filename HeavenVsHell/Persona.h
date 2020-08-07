@@ -24,6 +24,7 @@ public:
     QString correo;
     QString fechaHoraNacimiento;
     QString continente;
+    QString demonio;
 
     //LISTAS
     int pecados[7] = {0,0,0,0,0,0,0};
@@ -63,6 +64,7 @@ public:
         this->correo = "";
         this->fechaHoraNacimiento = "";
         this->continente = "";
+        this->demonio = "";
 
         //BOOLEANOS
         this->isPadre = false;
@@ -95,6 +97,7 @@ public:
         this->correo = pCorreo;
         this->fechaHoraNacimiento = pFechaNacimiento;
         this->continente = pContinente;
+        this->demonio = "";
 
         //BOOLEANOS
         this->isPadre = false;

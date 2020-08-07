@@ -758,6 +758,10 @@ color: rgb(188, 88, 5);</string>
         <height>291</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: italic 9pt &quot;Times New Roman&quot;;
+color: rgb(0, 0, 0);</string>
+      </property>
      </widget>
      <widget class="QComboBox" name="cb_apellidos">
       <property name="geometry">
@@ -829,9 +833,9 @@ color: rgb(188, 88, 5);</string>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>800</x>
+      <x>820</x>
       <y>40</y>
-      <width>101</width>
+      <width>211</width>
       <height>41</height>
      </rect>
     </property>
@@ -840,24 +844,7 @@ color: rgb(188, 88, 5);</string>
 color: rgb(188, 88, 5);</string>
     </property>
     <property name="text">
-     <string>VER CIELO</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>910</x>
-      <y>40</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 italic 12pt &quot;Times New Roman&quot;;
-color: rgb(188, 88, 5);</string>
-    </property>
-    <property name="text">
-     <string>VER INFIERNO</string>
+     <string>VER CIELO E INFIERNO</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">

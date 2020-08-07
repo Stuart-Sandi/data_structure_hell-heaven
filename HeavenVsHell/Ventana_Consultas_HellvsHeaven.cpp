@@ -18,6 +18,8 @@ Ventana_Consultas_HellvsHeaven::Ventana_Consultas_HellvsHeaven(QWidget *parent, 
     this->totalPecados = 0;
     this->totalBuenasAcciones = 0;
 
+    this->ventana = new Ventana_MostrarCI(0,this->datos);
+
     this->rellernarComboBoxCategorias(0);
     this->rellernarComboBoxFamilias();
 }
@@ -176,11 +178,11 @@ void Ventana_Consultas_HellvsHeaven::on_pushButton_2_clicked()
     this->ui->textBrowser->setText("");
     QList <Persona*> mundoTMP = this->datos->lPersonas->listaTMP;
     hallarTotalAcciones(mundoTMP);
-    qDebug()<<mundoTMP.size();
     mundoTMP = ordenarMundo(this->accion,mundoTMP);
     QString mensaje = "";
     QString dato = this->ui->cb_opciones->currentText();
 
+    mensaje += "Total Pecados: "+QString::number(this->totalPecados)+"\nTotal Buenas Acciones: "+QString::number(this->totalBuenasAcciones)+"\n\n";
     switch (this->ui->comboBox->currentIndex()) {
 
     case 0:
@@ -288,8 +290,9 @@ QString Ventana_Consultas_HellvsHeaven::agregarDatos(Persona * humano){
     mensaje += "País: "+humano->pais+'\n';
     mensaje += "Creencia: "+humano->creencia+'\n';
     mensaje += "Ocupación: "+humano->profesion+'\n';
+    mensaje += "Correo: "+humano->correo+'\n';
     mensaje += "Continente: "+humano->continente+'\n';
-    mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n";
+    mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n\n";
 
     //TOTAL PECADOS
     mensaje += "Total Pecados: " + QString::number(humano->totalPecados) +"\n";
@@ -301,17 +304,20 @@ QString Ventana_Consultas_HellvsHeaven::agregarDatos(Persona * humano){
     total = ((double)humano->totalBuenasAcciones/this->totalBuenasAcciones)*100;
     mensaje += "Porcentaje que representa en el mundo: "+QString::number(total)+" %"+"\n\n";
 
-    mensaje += "Hijos: [";
-    for (int i = 0;i<humano->listaHijos.size();i++) {
-        if (i != (humano->listaHijos.size()-1)){
-            mensaje += QString::number(humano->listaHijos[i]->id)+", ";
-        }
-        else{
-            mensaje += QString::number(humano->listaHijos[i]->id);
-        }
+    if (!humano->listaHijos.isEmpty()){
+        mensaje += "Hijos: [";
+        for (int i = 0;i<humano->listaHijos.size();i++) {
+            if (i != (humano->listaHijos.size()-1)){
+                mensaje += QString::number(humano->listaHijos[i]->id)+", ";
+            }
+            else{
+                mensaje += QString::number(humano->listaHijos[i]->id)+"]";
+            }
 
+        }
     }
-    mensaje += "]\n\n";
+
+    mensaje += "\n\n";
     return mensaje;
 }
 
@@ -325,4 +331,154 @@ void Ventana_Consultas_HellvsHeaven::hallarTotalAcciones(QList<Persona*> lista){
         this->totalBuenasAcciones += lista[i]->totalBuenasAcciones;
     }
 
+}
+
+void Ventana_Consultas_HellvsHeaven::on_pushButton_3_clicked()
+{
+    QList<Persona*> listaTMP;
+    QList<Persona*> listaFamilia;
+    this->vivos = 0;
+    this->infierno = 0;
+    this->cielo = 0;
+
+    listaFamilia = this->datos->lPersonas->familias.value(this->ui->cb_apellidos->currentText());
+
+    if (!listaFamilia.isEmpty()){
+
+        int validar = 0;
+        for (int i = 0;i<listaFamilia.size();i++) {
+            if (listaFamilia[i]->pais == this->ui->cb_paises->currentText()){
+                listaTMP.append(listaFamilia[i]);
+                validar = 1;
+            }
+        }
+
+        if (validar == 0){
+            QMessageBox msgBox;
+            msgBox.setText("No existen personas en el mundo con el apellido y país seleccionado.");
+            msgBox.setWindowTitle("Error");
+            msgBox.setIcon(msgBox.Critical);
+            msgBox.exec();
+            return;
+        }
+
+        listaTMP = ordenarMundo(this->accion, listaTMP);
+        QString mensaje = "";
+        for (int i = 0;i<listaTMP.size();i++) {
+            if (listaTMP[i]->inWorld){
+                this->vivos++;
+            }else if(listaTMP[i]->inHell){
+                this->infierno++;
+            }else{
+                this->cielo++;
+            }
+            mensaje += agregarDatosFamilia(listaTMP[i]);
+        }
+        mensaje += "\n\n";
+        mensaje += "Cantidad de familiares: "+QString::number(this->vivos+this->infierno+this->cielo)+"\n";
+        mensaje += "Porcentaje familia viva: "+QString::number((double)(this->vivos*100)/listaTMP.size())+" %\n";
+        mensaje += "Porcentaje familia en el Infierno: "+QString::number((double)(this->infierno*100)/listaTMP.size())+" %\n";
+        mensaje += "Porcentaje familia en el Cielo: "+QString::number((double)(this->cielo*100)/listaTMP.size())+" %\n";
+
+        this->ui->textBrowser_2->setText(mensaje);
+
+    }else{
+        QMessageBox msgBox;
+        msgBox.setText("No existen personas en el mundo con el apellido seleccionado.");
+        msgBox.setWindowTitle("Error");
+        msgBox.setIcon(msgBox.Critical);
+        msgBox.exec();
+    }
+
+
+}
+
+QString Ventana_Consultas_HellvsHeaven::agregarDatosFamilia(Persona * humano){
+    QString mensaje = "";
+
+    mensaje += "****************************************************\n";
+    mensaje += "Id: "+QString::number(humano->id)+'\n';
+    mensaje += "Nombre: "+humano->nombre+'\n';
+    mensaje += "Apellido: "+humano->apellido+'\n';
+    mensaje += "País: "+humano->pais+'\n';
+    mensaje += "Creencia: "+humano->creencia+'\n';
+    mensaje += "Ocupación: "+humano->profesion+'\n';
+    mensaje += "Correo: "+humano->correo+'\n';
+    mensaje += "Continente: "+humano->continente+'\n';
+    mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n";
+    mensaje += "Ubicación:";
+
+    if (humano->inWorld){
+        mensaje +=" Mundo\n\n";
+    }else if (humano->inHell){
+        mensaje +=" Infierno\n\n";
+    }else{
+        mensaje +=" Cielo\n\n";
+    }
+
+    mensaje += "[Lujuria: "+QString::number(humano->pecados[0])+", ";
+    mensaje += "Gula: "+QString::number(humano->pecados[1])+", ";
+    mensaje += "Avaricia: "+QString::number(humano->pecados[2])+", ";
+    mensaje += "Pereza: "+QString::number(humano->pecados[3])+", ";
+    mensaje += "Ira: "+QString::number(humano->pecados[4])+", ";
+    mensaje += "Envidia: "+QString::number(humano->pecados[5])+", ";
+    mensaje += "Soberbia: "+QString::number(humano->pecados[6])+"]"+ " Total: " + QString::number(humano->totalPecados) +"\n\n";
+
+    mensaje += "[Castidad: "+QString::number(humano->buenasAcciones[0])+", ";
+    mensaje += "Ayuno: "+QString::number(humano->buenasAcciones[1])+", ";
+    mensaje += "Donación: "+QString::number(humano->buenasAcciones[2])+", ";
+    mensaje += "Diligencia: "+QString::number(humano->buenasAcciones[3])+", ";
+    mensaje += "Calma: "+QString::number(humano->buenasAcciones[4])+", ";
+    mensaje += "Solidaridad: "+QString::number(humano->buenasAcciones[5])+", ";
+    mensaje += "Humildad: "+QString::number(humano->buenasAcciones[6])+"]"+ " Total: " + QString::number(humano->totalBuenasAcciones) +"\n\n";
+
+    if (!humano->listaHijos.isEmpty()){
+        mensaje += "Hijos: \n";
+        for (int i = 0;i<humano->listaHijos.size();i++) {
+            mensaje += "////////////////////////////////////////////////////////////////////////////////////////////////////////\n";
+            mensaje += "Id: "+QString::number(humano->listaHijos[i]->id)+'\n';
+            mensaje += "Nombre: "+humano->listaHijos[i]->nombre+'\n';
+            mensaje += "Apellido: "+humano->listaHijos[i]->apellido+'\n';
+            mensaje += "País: "+humano->listaHijos[i]->pais+'\n';
+            mensaje += "Creencia: "+humano->listaHijos[i]->creencia+'\n';
+            mensaje += "Ocupación: "+humano->listaHijos[i]->profesion+'\n';
+            mensaje += "Correo: "+humano->listaHijos[i]->correo+'\n';
+            mensaje += "Continente: "+humano->listaHijos[i]->continente+'\n';
+            mensaje += "Fecha nacimiento: "+humano->listaHijos[i]->fechaHoraNacimiento+"\n";
+            mensaje += "Ubicación:";
+
+            if (humano->listaHijos[i]->inWorld){
+                mensaje +=" Mundo\n\n";
+            }else if (humano->listaHijos[i]->inHell){
+                mensaje +=" Infierno\n\n";
+            }else{
+                mensaje +=" Cielo\n\n";
+            }
+
+            mensaje += "[Lujuria: "+QString::number(humano->listaHijos[i]->pecados[0])+", ";
+            mensaje += "Gula: "+QString::number(humano->listaHijos[i]->pecados[1])+", ";
+            mensaje += "Avaricia: "+QString::number(humano->listaHijos[i]->pecados[2])+", ";
+            mensaje += "Pereza: "+QString::number(humano->listaHijos[i]->pecados[3])+", ";
+            mensaje += "Ira: "+QString::number(humano->listaHijos[i]->pecados[4])+", ";
+            mensaje += "Envidia: "+QString::number(humano->listaHijos[i]->pecados[5])+", ";
+            mensaje += "Soberbia: "+QString::number(humano->listaHijos[i]->pecados[6])+"]"+ " Total: " + QString::number(humano->listaHijos[i]->totalPecados) +"\n\n";
+
+            mensaje += "[Castidad: "+QString::number(humano->listaHijos[i]->buenasAcciones[0])+", ";
+            mensaje += "Ayuno: "+QString::number(humano->listaHijos[i]->buenasAcciones[1])+", ";
+            mensaje += "Donación: "+QString::number(humano->listaHijos[i]->buenasAcciones[2])+", ";
+            mensaje += "Diligencia: "+QString::number(humano->listaHijos[i]->buenasAcciones[3])+", ";
+            mensaje += "Calma: "+QString::number(humano->listaHijos[i]->buenasAcciones[4])+", ";
+            mensaje += "Solidaridad: "+QString::number(humano->listaHijos[i]->buenasAcciones[5])+", ";
+            mensaje += "Humildad: "+QString::number(humano->listaHijos[i]->buenasAcciones[6])+"]"+ " Total: " + QString::number(humano->totalBuenasAcciones) +"\n\n";
+
+        }
+        mensaje += "\n\n";
+    }
+
+    return mensaje;
+}
+
+void Ventana_Consultas_HellvsHeaven::on_pushButton_4_clicked()
+{
+    this->ventana->setVisible(true);
 }

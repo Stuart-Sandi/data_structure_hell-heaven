@@ -113,7 +113,6 @@ void Ventana_Condenacion::condenar(){
     listaTmp = this->ordenarListaRestaPecados(demonio,listaTmp);
 
     int tama = listaTmp.size()* 0.05;
-    qDebug()<<tama;
     int contador = 0;
     int index = 0;
 
@@ -188,6 +187,7 @@ void Ventana_Condenacion::calcularDatos(QList<Persona*> listaDemonio){
 
 QString Ventana_Condenacion::datosPersona(Persona * humano){
     int demonio = this->ui->comboBox->currentIndex();
+    humano->demonio = this->datos->nombreDemonios[demonio];
     QString mensaje;
 
     mensaje += "***********************************************************\n";
@@ -197,6 +197,8 @@ QString Ventana_Condenacion::datosPersona(Persona * humano){
     mensaje += "País: "+humano->pais+'\n';
     mensaje += "Creencia: "+humano->creencia+'\n';
     mensaje += "Ocupación: "+humano->profesion+'\n';
+    mensaje += "Correo: "+humano->correo+'\n';
+    mensaje += "Continente: "+humano->continente+'\n';
     mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n";
     mensaje += "Condenado por: "+this->datos->nombreDemonios[demonio]+"\n\n";
 
@@ -216,17 +218,20 @@ QString Ventana_Condenacion::datosPersona(Persona * humano){
     mensaje += "Solidaridad: "+QString::number(humano->buenasAcciones[5])+", ";
     mensaje += "Humildad: "+QString::number(humano->buenasAcciones[6])+"]"+ " Total: " + QString::number(humano->totalBuenasAcciones) +"\n\n";
 
-    mensaje += "Hijos: [";
-    for (int i = 0;i<humano->listaHijos.size();i++) {
-        if (i != (humano->listaHijos.size()-1)){
-            mensaje += QString::number(humano->listaHijos[i]->id)+", ";
-        }
-        else{
-            mensaje += QString::number(humano->listaHijos[i]->id);
-        }
+    if (!humano->listaHijos.isEmpty()){
+        mensaje += "Hijos: [";
+        for (int i = 0;i<humano->listaHijos.size();i++) {
+            if (i != (humano->listaHijos.size()-1)){
+                mensaje += QString::number(humano->listaHijos[i]->id)+", ";
+            }
+            else{
+                mensaje += QString::number(humano->listaHijos[i]->id)+"]";
+            }
 
+        }
     }
-    mensaje += "]\n\n";
+
+    mensaje += "\n\n";
     return mensaje;
 }
 
@@ -296,7 +301,6 @@ void Ventana_Condenacion::log(){
         int segundo = QTime::currentTime().second();
         int min = QTime::currentTime().minute();
         QString mensaje = QString::number(anno)+QString::number(mes)+QString::number(dia)+"_"+QString::number(hora)+QString::number(min)+QString::number(segundo);
-        qDebug()<<mensaje;
 
         //ESTE ES EL METODO PARA CREAR LOS ARCHIVOS
         QString nombreArchivo = "../HeavenVsHell/Archivos_Condenacion/"+mensaje+".txt";
