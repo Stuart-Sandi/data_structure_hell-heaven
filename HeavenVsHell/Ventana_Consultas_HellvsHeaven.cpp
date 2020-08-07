@@ -279,7 +279,7 @@ QList<Persona*> Ventana_Consultas_HellvsHeaven::ordenarMundo(int accion, QList<P
 
 QString Ventana_Consultas_HellvsHeaven::agregarDatos(Persona * humano){
     QString mensaje = "";
-    float total = 0;
+    double total = 0;
 
     mensaje += "****************************************************\n";
     mensaje += "Id: "+QString::number(humano->id)+'\n';
@@ -291,13 +291,14 @@ QString Ventana_Consultas_HellvsHeaven::agregarDatos(Persona * humano){
     mensaje += "Continente: "+humano->continente+'\n';
     mensaje += "Fecha nacimiento: "+humano->fechaHoraNacimiento+"\n";
 
+    //TOTAL PECADOS
     mensaje += "Total Pecados: " + QString::number(humano->totalPecados) +"\n";
-    total = (humano->totalPecados*100)/this->totalPecados;
-
-    qDebug()<<total;
+    total = ((double)humano->totalPecados/this->totalPecados)*100;
     mensaje += "Porcentaje que representa en el mundo: "+QString::number(total)+" %"+"\n\n";
-    total = (humano->totalBuenasAcciones*100)/this->totalBuenasAcciones;
+
+    //TOTAL BUENAS ACCIONES
     mensaje += "Total Buenas Acciones: " + QString::number(humano->totalBuenasAcciones) +"\n";
+    total = ((double)humano->totalBuenasAcciones/this->totalBuenasAcciones)*100;
     mensaje += "Porcentaje que representa en el mundo: "+QString::number(total)+" %"+"\n\n";
 
     mensaje += "Hijos: [";
